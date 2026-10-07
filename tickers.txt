@@ -1,0 +1,38 @@
+# Initial Oslo Bors / Euronext Oslo universe for Yahoo Finance.
+# Yahoo symbols normally use the .OL suffix.
+# Keep one ticker per line; expand/maintain this list as listings change.
+AKRBP.OL
+AKER.OL
+AKSO.OL
+AUTO.OL
+BAKKA.OL
+BWLPG.OL
+DNB.OL
+DNO.OL
+ELK.OL
+ENTRA.OL
+EQNR.OL
+FRO.OL
+GJF.OL
+GOGL.OL
+HAFNI.OL
+KOG.OL
+LSG.OL
+MOWI.OL
+MPCC.OL
+NHY.OL
+NOD.OL
+NRC.OL
+ORK.OL
+OTL.OL
+SALM.OL
+SATS.OL
+SCATC.OL
+STB.OL
+SUBC.OL
+TEL.OL
+TGS.OL
+TOM.OL
+VAR.OL
+VEI.OL
+YAR.OL

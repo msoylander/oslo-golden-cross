@@ -150,6 +150,7 @@ th{{position:sticky;top:0;background:#17202a;color:white;cursor:pointer}} .gold{
 input{{padding:10px;width:min(420px,90%);margin:10px 0 16px;border:1px solid #aaa;border-radius:8px}}
 </style></head><body>
 <h1>Oslo Golden Cross Dashboard</h1>
+<p><strong>Signal definition:</strong> Golden Cross = SMA50 crossing from at/below SMA200 to above SMA200 on the latest available daily bar. “Approaching” = SMA50 within 2% below SMA200.</p>
 <p>Generated {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")} from Yahoo Finance daily price data.</p>
 <div class="cards"><div class="card"><div class="big">{universe_count}</div>Oslo shares discovered</div>
 <div class="card"><div class="big">{len(df)}</div>Successfully analysed</div>
@@ -211,7 +212,10 @@ def main() -> None:
     df = df.sort_values("distance_pct", ascending=False)
     df.to_csv(RESULTS_DIR / "oslo_universe.csv", index=False)
     pd.DataFrame(errors).to_csv(RESULTS_DIR / "errors.csv", index=False)
-    (RESULTS_DIR / "dashboard.html").write_text(make_dashboard(df, errors, len(universe)), encoding="utf-8")
+    dashboard = make_dashboard(df, errors, len(universe))
+    (RESULTS_DIR / "dashboard.html").write_text(dashboard, encoding="utf-8")
+    # index.html makes the artifact immediately usable as a static site.
+    (RESULTS_DIR / "index.html").write_text(dashboard, encoding="utf-8")
     write_summary(df, len(universe), errors)
     print(f"Successfully analysed {len(df)}/{len(universe)} equities.")
     print(f"New Golden Crosses: {(df.status == 'NEW GOLDEN CROSS').sum()}")

@@ -1,3 +1,4 @@
 yfinance>=0.2.66,<1
 pandas>=2.2,<3
-\nrequests>=2.32,<3\npypdf>=5,<7\n
+requests>=2.32,<3
+pypdf>=5,<7

@@ -6,7 +6,7 @@ on:
     - cron: "30 16 * * 1-5"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   scan:
@@ -14,19 +14,42 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
+
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Scan full Yahoo Oslo universe
+
+      - name: Scan Oslo equity universe
         run: python scanner.py
-      - name: Upload dashboard and data
+
+      - name: Upload dashboard and raw data
         uses: actions/upload-artifact@v4
         with:
           name: oslo-golden-cross-dashboard
           path: results/
           if-no-files-found: error
           retention-days: 30
+
+      - name: Publish dashboard branch
+        run: |
+          rm -rf /tmp/dashboard
+          mkdir -p /tmp/dashboard
+          cp results/index.html /tmp/dashboard/index.html
+          cp results/oslo_universe.csv /tmp/dashboard/oslo_universe.csv
+          cp results/errors.csv /tmp/dashboard/errors.csv
+          cd /tmp/dashboard
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b dashboard
+          git add .
+          git commit -m "Update Oslo Golden Cross dashboard"
+          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push --force origin dashboard
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

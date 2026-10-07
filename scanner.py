@@ -26,15 +26,28 @@ def discover_oslo_universe() -> pd.DataFrame:
     rows = []
     for x in quotes:
         symbol = x.get("symbol")
+        quote_type = str(x.get("quoteType") or "").upper()
+        name = x.get("shortName") or x.get("longName") or symbol or ""
+
         if not symbol:
             continue
+
+        # Yahoo's OSL screener also returns bonds/professional-market
+        # instruments. Keep ordinary equity symbols and reject obvious
+        # non-share instruments before downloading price history.
+        upper = symbol.upper()
+        if "-PRO" in upper or upper.endswith("O.OL"):
+            continue
+        if quote_type and quote_type != "EQUITY":
+            continue
+
         rows.append({
             "ticker": symbol,
-            "company": x.get("shortName") or x.get("longName") or symbol,
+            "company": name,
             "market_cap": x.get("marketCap"),
         })
     if not rows:
-        raise RuntimeError("Yahoo screener returned no Oslo equities")
+        raise RuntimeError("Yahoo screener returned no Oslo shares after filtering")
     return pd.DataFrame(rows).drop_duplicates("ticker").sort_values("ticker")
 
 
@@ -106,7 +119,7 @@ input{{padding:10px;width:min(420px,90%);margin:10px 0 16px;border:1px solid #aa
 </style></head><body>
 <h1>Oslo Golden Cross Dashboard</h1>
 <p>Generated {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")} from Yahoo Finance daily price data.</p>
-<div class="cards"><div class="card"><div class="big">{universe_count}</div>Yahoo OSL equities discovered</div>
+<div class="cards"><div class="card"><div class="big">{universe_count}</div>Oslo shares discovered</div>
 <div class="card"><div class="big">{len(df)}</div>Successfully analysed</div>
 <div class="card"><div class="big">{len(new)}</div>New Golden Crosses</div>
 <div class="card"><div class="big">{len(approaching)}</div>Within 2% below crossover</div>

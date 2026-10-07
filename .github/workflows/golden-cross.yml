@@ -1,0 +1,37 @@
+name: Oslo Golden Cross Scan
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Weekdays after the Oslo market close. GitHub cron uses UTC.
+    - cron: "30 16 * * 1-5"
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scanner
+        run: python scanner.py
+
+      - name: Upload scan results
+        uses: actions/upload-artifact@v4
+        with:
+          name: golden-cross-results
+          path: results/*.csv
+          if-no-files-found: error
+          retention-days: 30

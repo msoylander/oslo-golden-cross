@@ -5,53 +5,83 @@ from pathlib import Path
 import html
 import os
 import time
+import io
+import re
+import requests
+from pypdf import PdfReader
 
 import pandas as pd
 import yfinance as yf
 from yfinance import EquityQuery
 
 RESULTS_DIR = Path("results")
+EURONEXT_REGULATED_PDF = "https://www.euronext.com/sites/default/files/stld/oslo-homestate/Hjemstatsliste.pdf"
 LOOKBACK = "2y"
 FAST = 50
 SLOW = 200
 
 
-def discover_oslo_universe() -> pd.DataFrame:
+def official_regulated_universe() -> pd.DataFrame:
+    """Euronext's official Oslo Børs + Expand company list."""
+    r = requests.get(EURONEXT_REGULATED_PDF, timeout=30)
+    r.raise_for_status()
+    text = "\n".join((p.extract_text() or "") for p in PdfReader(io.BytesIO(r.content)).pages)
+    markets = ("Oslo Børs", "Euronext Expand Oslo")
+    rows = []
+    for raw in text.splitlines():
+        line = " ".join(raw.split())
+        market = next((m for m in markets if m in line), None)
+        if not market:
+            continue
+        before = line.split(market, 1)[0].strip()
+        m = re.match(r"^([A-Z0-9]{1,8})\s+(.+)$", before)
+        if not m or m.group(1) in {"Ticker", "Name"}:
+            continue
+        ticker, company = m.groups()
+        rows.append({"ticker": f"{ticker}.OL", "company": company.strip(),
+                     "market": market, "source": "Euronext official"})
+    df = pd.DataFrame(rows).drop_duplicates("ticker")
+    if len(df) < 150:
+        raise RuntimeError(f"Euronext regulated list parsed only {len(df)} companies")
+    return df
+
+
+def yahoo_oslo_candidates() -> pd.DataFrame:
+    """Yahoo candidates supplement Growth, which is not in Euronext's home-state PDF."""
     q = EquityQuery("and", [
         EquityQuery("eq", ["region", "no"]),
         EquityQuery("eq", ["exchange", "OSL"]),
     ])
     response = yf.screen(q, size=250, sortField="ticker", sortAsc=True)
-    quotes = response.get("quotes", [])
     rows = []
-    for x in quotes:
+    for x in response.get("quotes", []):
         symbol = x.get("symbol")
-        quote_type = str(x.get("quoteType") or "").upper()
-        name = x.get("shortName") or x.get("longName") or symbol or ""
-
-        if not symbol:
+        qt = str(x.get("quoteType") or "").upper()
+        if not symbol or "-PRO" in symbol.upper() or symbol.upper().endswith("O.OL"):
             continue
-
-        # Yahoo's OSL screener also returns bonds/professional-market
-        # instruments. Keep ordinary equity symbols and reject obvious
-        # non-share instruments before downloading price history.
-        upper = symbol.upper()
-        if "-PRO" in upper or upper.endswith("O.OL"):
+        if qt and qt != "EQUITY":
             continue
-        if quote_type and quote_type != "EQUITY":
-            continue
-
-        rows.append({
-            "ticker": symbol,
-            "company": name,
-            "market_cap": x.get("marketCap"),
-        })
-    if not rows:
-        raise RuntimeError("Yahoo screener returned no Oslo shares after filtering")
-    return pd.DataFrame(rows).drop_duplicates("ticker").sort_values("ticker")
+        rows.append({"ticker": symbol,
+                     "company": x.get("shortName") or x.get("longName") or symbol,
+                     "market": "Growth/Oslo candidate",
+                     "source": "Yahoo candidate"})
+    return pd.DataFrame(rows).drop_duplicates("ticker")
 
 
-def analyse(ticker: str, company: str) -> dict:
+def discover_oslo_universe() -> pd.DataFrame:
+    official = official_regulated_universe()
+    yahoo = yahoo_oslo_candidates()
+    # Official Euronext metadata always wins. Yahoo supplements securities
+    # absent from the regulated-market PDF, principally Growth candidates.
+    universe = pd.concat([official, yahoo], ignore_index=True)
+    universe = universe.drop_duplicates("ticker", keep="first").sort_values("ticker")
+    print(f"Euronext official regulated companies: {len(official)}")
+    print(f"Yahoo equity candidates: {len(yahoo)}")
+    print(f"Combined unique Oslo candidates: {len(universe)}")
+    return universe
+
+
+def analyse(ticker: str, company: str, market: str, source: str) -> dict:
     df = yf.download(ticker, period=LOOKBACK, interval="1d", auto_adjust=True,
                      progress=False, threads=False)
     if df.empty:
@@ -89,6 +119,8 @@ def analyse(ticker: str, company: str) -> dict:
     return {
         "company": company,
         "ticker": ticker,
+        "market": market,
+        "source": source,
         "date": close.index[-1].strftime("%Y-%m-%d"),
         "close": round(float(close.iloc[-1]), 4),
         "sma50": round(latest50, 4),
@@ -105,7 +137,7 @@ def make_dashboard(df: pd.DataFrame, errors: list[dict], universe_count: int) ->
     for _, r in df.sort_values(["status", "distance_pct"], ascending=[True, False]).iterrows():
         cls = "gold" if r.status == "NEW GOLDEN CROSS" else ("near" if r.status == "APPROACHING" else "")
         rows.append(f"""<tr class="{cls}"><td>{html.escape(str(r.company))}</td><td>{html.escape(str(r.ticker))}</td>
-<td>{r.close:.2f}</td><td>{r.sma50:.2f}</td><td>{r.sma200:.2f}</td>
+<td>{html.escape(str(r.market))}</td><td>{r.close:.2f}</td><td>{r.sma50:.2f}</td><td>{r.sma200:.2f}</td>
 <td data-order="{r.distance_pct}">{r.distance_pct:+.2f}%</td><td>{html.escape(str(r.status))}</td></tr>""")
 
     return f"""<!doctype html><html><head><meta charset="utf-8"><title>Oslo Golden Cross Dashboard</title>
@@ -113,7 +145,7 @@ def make_dashboard(df: pd.DataFrame, errors: list[dict], universe_count: int) ->
 body{{font-family:system-ui,-apple-system,sans-serif;margin:28px;background:#f6f7f9;color:#17202a}}
 .cards{{display:flex;gap:14px;flex-wrap:wrap;margin:20px 0}} .card{{background:white;padding:16px 22px;border-radius:12px;box-shadow:0 1px 4px #bbb}}
 .big{{font-size:28px;font-weight:700}} table{{border-collapse:collapse;width:100%;background:white}} th,td{{padding:9px 11px;border-bottom:1px solid #ddd;text-align:right}}
-th:first-child,td:first-child,th:nth-child(2),td:nth-child(2),th:last-child,td:last-child{{text-align:left}}
+th:first-child,td:first-child,th:nth-child(2),td:nth-child(2),th:nth-child(3),td:nth-child(3),th:last-child,td:last-child{{text-align:left}}
 th{{position:sticky;top:0;background:#17202a;color:white;cursor:pointer}} .gold{{background:#fff3b0;font-weight:700}} .near{{background:#e8f4ff}}
 input{{padding:10px;width:min(420px,90%);margin:10px 0 16px;border:1px solid #aaa;border-radius:8px}}
 </style></head><body>
@@ -125,7 +157,7 @@ input{{padding:10px;width:min(420px,90%);margin:10px 0 16px;border:1px solid #aa
 <div class="card"><div class="big">{len(approaching)}</div>Within 2% below crossover</div>
 <div class="card"><div class="big">{len(errors)}</div>Data errors</div></div>
 <input id="q" placeholder="Search company, ticker or status…" onkeyup="filterTable()">
-<table id="stocks"><thead><tr><th>Company</th><th>Ticker</th><th>Price</th><th>SMA50</th><th>SMA200</th><th>50 vs 200</th><th>Status</th></tr></thead>
+<table id="stocks"><thead><tr><th>Company</th><th>Ticker</th><th>Market</th><th>Price</th><th>SMA50</th><th>SMA200</th><th>50 vs 200</th><th>Status</th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table>
 <script>
 function filterTable(){{let q=document.getElementById('q').value.toLowerCase();document.querySelectorAll('#stocks tbody tr').forEach(r=>r.style.display=r.innerText.toLowerCase().includes(q)?'':'none')}}
@@ -159,16 +191,16 @@ def write_summary(df: pd.DataFrame, universe_count: int, errors: list[dict]) -> 
 
 def main() -> None:
     universe = discover_oslo_universe()
-    print(f"Yahoo screener discovered {len(universe)} OSL equities.")
+    print(f"Combined universe contains {len(universe)} Oslo equity candidates.")
     results, errors = [], []
     for i, r in enumerate(universe.itertuples(index=False), 1):
         try:
-            result = analyse(r.ticker, r.company)
+            result = analyse(r.ticker, r.company, r.market, r.source)
             results.append(result)
             if result["status"] == "NEW GOLDEN CROSS":
                 print(f"GOLDEN CROSS: {r.ticker} {r.company} ({result['date']})")
         except Exception as exc:
-            errors.append({"ticker": r.ticker, "company": r.company, "error": str(exc)})
+            errors.append({"ticker": r.ticker, "company": r.company, "market": r.market, "source": r.source, "error": str(exc)})
             print(f"WARN {r.ticker}: {exc}")
         time.sleep(0.03)
 

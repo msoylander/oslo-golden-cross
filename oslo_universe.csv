@@ -1,0 +1,227 @@
+company,ticker,market,source,date,close,sma50,sma200,distance_pct,technical_score,sma200_slope20_pct,volume_ratio,relative_strength_3m_pct,cross_pts,slope_pts,structure_pts,volume_pts,relative_pts,status
+Hunter Group ASA,HUNT.OL,Euronext Expand Oslo,Euronext official,2026-10-09,19.7,13.2182,6.7109,96.965,60,32.41,1.97,139.72,0,15,15,15,15,ABOVE
+CODELAB CAPITAL AS,CODE.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,5.92,4.2406,3.1762,33.512,60,8.93,2.38,63.84,0,15,15,15,15,ABOVE
+Okeanis Eco Tankers Corp.,OET.OL,Oslo Børs,Euronext official,2026-10-09,896.0,683.6303,515.8834,32.516,60,9.18,1.81,59.35,0,15,15,15,15,ABOVE
+Wallenius Wilhelmsen ASA,WAWI.OL,Oslo Børs,Euronext official,2026-10-09,173.0,167.3214,133.5024,25.332,60,6.62,3.42,18.71,0,15,15,15,15,ABOVE
+Goodtech ASA,GOD.OL,Oslo Børs,Euronext official,2026-10-09,17.2,14.33,11.9289,20.128,60,5.21,3.88,28.03,0,15,15,15,15,ABOVE
+ContextVision AB,CONTX.OL,Oslo Børs,Euronext official,2026-10-09,4.99,4.2714,3.693,15.662,60,3.29,3.24,50.63,0,15,15,15,15,ABOVE
+Wilh. Wilhelmsen Holding ASA,WWI.OL,Oslo Børs,Euronext official,2026-10-09,914.0,842.04,729.7965,15.38,60,5.07,2.09,19.73,0,15,15,15,15,ABOVE
+Hafnia Limited,HAFNI.OL,Oslo Børs,Euronext official,2026-10-09,103.3,82.6197,72.2853,14.297,60,4.96,6.15,37.92,0,15,15,15,15,ABOVE
+Vow ASA,VOW.OL,Oslo Børs,Euronext official,2026-10-09,2.92,2.5942,2.4828,4.488,60,1.83,1.68,25.34,0,15,15,15,15,ABOVE
+Zaptec ASA,ZAP.OL,Oslo Børs,Euronext official,2026-10-09,61.2,54.535,39.6736,37.459,55,10.8,1.21,26.02,0,15,15,10,15,ABOVE
+Frontline plc,FRO.OL,Oslo Børs,Euronext official,2026-10-09,543.6,434.1354,348.6856,24.506,55,7.74,1.31,40.17,0,15,15,10,15,ABOVE
+CMB.TECH NV,CMBTO.OL,Oslo Børs,Euronext official,2026-10-09,199.0,175.408,141.6294,23.85,55,6.24,1.2,24.08,0,15,15,10,15,ABOVE
+AKVA Group ASA,AKVA.OL,Oslo Børs,Euronext official,2026-10-09,157.5,140.945,118.232,19.21,55,5.22,1.34,20.05,0,15,15,10,15,ABOVE
+Equinor ASA,EQNR.OL,Oslo Børs,Euronext official,2026-10-09,417.9,398.3603,336.6168,18.342,55,5.8,1.21,15.0,0,15,15,10,15,ABOVE
+NRC Group ASA,NRC.OL,Oslo Børs,Euronext official,2026-10-09,9.7,9.335,8.6004,8.542,55,2.33,1.41,11.56,0,15,15,10,15,ABOVE
+BW Energy Limited,BWE.OL,Oslo Børs,Euronext official,2026-10-09,63.9,56.556,53.0963,6.516,55,4.0,1.35,19.74,0,15,15,10,15,ABOVE
+DEEP VALUE DRILLER AS,DVD.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,1.93,1.4827,1.424,4.126,55,0.95,10.99,29.56,0,10,15,15,15,ABOVE
+Bonheur ASA,BONHR.OL,Oslo Børs,Euronext official,2026-10-09,263.0,251.45,243.7987,3.138,55,1.7,1.97,8.55,0,15,15,15,10,ABOVE
+Circio Holding ASA,CRNA.OL,Oslo Børs,Euronext official,2026-10-09,11.14,10.9156,7.1842,51.939,50,16.03,1.0,43.23,0,15,15,5,15,ABOVE
+BYGGMA,BMA.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,23.8,23.544,19.4395,21.114,50,5.33,1.15,14.29,0,15,15,5,15,ABOVE
+MPC Container Ships ASA,MPCC.OL,Oslo Børs,Euronext official,2026-10-09,28.94,26.7959,22.8362,17.34,50,5.51,1.04,13.96,0,15,15,5,15,ABOVE
+Medistim ASA,MEDI.OL,Oslo Børs,Euronext official,2026-10-09,281.0,246.92,228.5338,8.045,50,0.55,1.5,17.94,0,10,15,10,15,ABOVE
+DNO ASA,DNO.OL,Oslo Børs,Euronext official,2026-10-09,19.55,18.3717,17.2137,6.727,50,3.21,1.16,11.7,0,15,15,5,15,ABOVE
+Odfjell Drilling Ltd,ODL.OL,Oslo Børs,Euronext official,2026-10-09,101.2,95.5251,90.7973,5.207,50,2.43,1.04,18.61,0,15,15,5,15,ABOVE
+Odfjell SE,ODF.OL,Oslo Børs,Euronext official,2026-10-09,129.2,119.5472,114.8081,4.128,50,1.16,1.01,11.18,0,15,15,5,15,ABOVE
+Endúr ASA,ENDUR.OL,Oslo Børs,Euronext official,2026-10-09,120.0,110.936,107.9247,2.79,50,2.45,2.29,1.08,0,15,15,15,5,ABOVE
+poLight ASA,PLT.OL,Oslo Børs,Euronext official,2026-10-09,14.4,13.274,8.8818,49.452,45,8.48,0.75,11.58,0,15,15,0,15,ABOVE
+Höegh Autoliners ASA,HAUTO.OL,Oslo Børs,Euronext official,2026-10-09,184.6,178.9212,140.5805,27.273,45,7.61,0.84,11.25,0,15,15,0,15,ABOVE
+BW LPG Limited,BWLPG.OL,Oslo Børs,Euronext official,2026-10-09,252.4,223.5781,179.4298,24.605,45,7.24,0.8,22.69,0,15,15,0,15,ABOVE
+Moreld ASA,MORLD.OL,Oslo Børs,Euronext official,2026-10-09,23.6,23.2948,18.9243,23.095,45,3.85,0.84,10.74,0,15,15,0,15,ABOVE
+AutoStore Holdings Ltd.,AUTO.OL,Oslo Børs,Euronext official,2026-10-09,15.89,15.3984,12.5395,22.799,45,4.04,0.78,37.46,0,15,15,0,15,ABOVE
+BlueNord ASA,BNOR.OL,Oslo Børs,Euronext official,2026-10-09,586.0,557.72,458.5521,21.626,45,5.89,0.71,18.08,0,15,15,0,15,ABOVE
+Vår Energi ASA,VAR.OL,Oslo Børs,Euronext official,2026-10-09,53.2,50.1724,42.1678,18.983,45,5.82,0.78,19.09,0,15,15,0,15,ABOVE
+OKEA ASA,OKEA.OL,Oslo Børs,Euronext official,2026-10-09,42.65,38.761,34.0112,13.965,45,5.97,0.94,27.97,0,15,15,0,15,ABOVE
+Aker BP ASA,AKRBP.OL,Oslo Børs,Euronext official,2026-10-09,353.7,349.7,314.9039,11.05,45,3.91,1.19,5.9,0,15,15,5,10,ABOVE
+Napatech A/S,NAPA.OL,Oslo Børs,Euronext official,2026-10-09,47.0,42.776,39.0408,9.568,45,3.81,0.9,14.29,0,15,15,0,15,ABOVE
+Paratus Energy Services Ltd.,PLSV.OL,Oslo Børs,Euronext official,2026-10-09,48.25,47.8872,44.3468,7.983,45,2.2,1.32,3.92,0,15,15,10,5,ABOVE
+ININ GROUP AS,ININ.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,3.7,3.34,3.1033,7.629,45,1.57,0.65,23.16,0,15,15,0,15,ABOVE
+Panoro Energy ASA,PEN.OL,Oslo Børs,Euronext official,2026-10-09,30.5,29.4606,27.542,6.966,45,4.44,0.88,11.66,0,15,15,0,15,ABOVE
+Stolt-Nielsen Limited,SNI.OL,Oslo Børs,Euronext official,2026-10-09,356.5,338.15,320.0897,5.642,45,0.74,1.72,4.05,0,10,15,15,5,ABOVE
+Pioneer Property Group ASA,PPG.OL,Euronext Expand Oslo,Euronext official,2026-10-09,106.5,105.1788,100.4853,4.671,45,1.31,2.48,-1.97,0,15,15,15,0,ABOVE
+Integrated Wind Solutions ASA,IWS.OL,Oslo Børs,Euronext official,2026-10-09,61.2,56.7343,55.3886,2.429,45,3.22,1.35,3.14,0,15,15,10,5,ABOVE
+ENERGEIA AS,ENERG.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,8.0,7.7448,7.5667,2.354,45,0.18,6.21,1.36,0,10,15,15,5,ABOVE
+BRUTON LIMITED,BRUT.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,57.0,52.3416,52.1909,0.289,45,1.14,1.45,0.3,0,15,15,10,5,ABOVE / CLOSE
+Norske Skog,NSKOG.OL,Oslo Børs,Euronext official,2026-10-09,43.9,46.881,37.2596,25.823,43,8.86,1.1,27.72,0,15,8,5,15,ABOVE
+Himalaya Shipping Ltd,HSHP.OL,Oslo Børs,Euronext official,2026-10-09,173.0,161.7178,134.4215,20.307,40,6.31,0.94,9.31,0,15,15,0,10,ABOVE
+Klaveness Combination Carriers ASA,KCC.OL,Oslo Børs,Euronext official,2026-10-09,105.4,100.7096,90.9853,10.688,40,3.12,0.59,6.8,0,15,15,0,10,ABOVE
+DOF Group ASA,DOFG.OL,Oslo Børs,Euronext official,2026-10-09,130.6,129.5514,119.1626,8.718,40,3.88,1.19,2.89,0,15,15,5,5,ABOVE
+Jinhui Shipping and Transportation Limit,JIN.OL,Oslo Børs,Euronext official,2026-10-09,6.82,6.6296,6.1046,8.6,40,1.41,0.62,5.05,0,15,15,0,10,ABOVE
+PetroNor E&P ASA,PNOR.OL,Oslo Børs,Euronext official,2026-10-09,12.08,11.596,10.6979,8.395,40,3.71,0.85,9.3,0,15,15,0,10,ABOVE
+Smartoptics Group ASA,SMOP.OL,Oslo Børs,Euronext official,2026-10-09,51.2,47.276,43.9994,7.447,40,5.18,0.86,6.0,0,15,15,0,10,ABOVE
+Nekkar ASA,NKR.OL,Oslo Børs,Euronext official,2026-10-09,16.45,14.603,14.0637,3.834,40,2.11,0.91,8.14,0,15,15,0,10,ABOVE
+Otello Corporation ASA,OTEC.OL,Oslo Børs,Euronext official,2026-10-09,21.15,18.2172,17.9732,1.358,40,0.46,0.81,18.81,0,10,15,0,15,ABOVE / CLOSE
+Kitron ASA,KIT.OL,Oslo Børs,Euronext official,2026-10-09,103.9,94.617,95.6805,-1.112,40,4.02,1.27,13.3,0,15,0,10,15,APPROACHING
+Oncoinvent ASA,ONCIN.OL,Oslo Børs,Euronext official,2026-10-09,70.0,93.254,60.7207,53.578,38,7.4,9.44,-17.81,0,15,8,15,0,ABOVE
+Tekna Holding ASA,TEKNA.OL,Oslo Børs,Euronext official,2026-10-09,6.0,6.1036,4.3959,38.848,38,7.25,0.39,50.54,0,15,8,0,15,ABOVE
+Hexagon Composites ASA,HEX.OL,Oslo Børs,Euronext official,2026-10-09,12.73,13.0938,10.1039,29.592,38,5.65,0.51,25.93,0,15,8,0,15,ABOVE
+Aker ASA,AKER.OL,Oslo Børs,Euronext official,2026-10-09,1360.0,1471.08,1148.2369,28.116,38,6.69,1.44,1.61,0,15,8,10,5,ABOVE
+Nykode Therapeutics ASA,NYKD.OL,Oslo Børs,Euronext official,2026-10-09,3.44,3.8378,3.2615,17.671,38,4.49,0.58,17.11,0,15,8,0,15,ABOVE
+Aker BioMarine ASA,AKBM.OL,Oslo Børs,Euronext official,2026-10-05,122.0,123.0,106.5205,15.471,38,3.96,0.03,17.6,0,15,8,0,15,ABOVE
+B2 Impact ASA,B2I.OL,Oslo Børs,Euronext official,2026-10-09,23.05,25.339,22.498,12.628,38,3.99,6.25,-11.03,0,15,8,15,0,ABOVE
+SpareBank 1 Sør-Norge ASA,SB1NO.OL,Oslo Børs,Euronext official,2026-10-09,219.0,221.93,200.9178,10.458,38,2.69,1.36,2.84,0,15,8,10,5,ABOVE
+Arendals Fossekompani ASA,AFK.OL,Oslo Børs,Euronext official,2026-10-09,177.5,185.01,171.8661,7.648,38,3.2,2.29,-5.03,0,15,8,15,0,ABOVE
+Solstad Offshore ASA,SOFF.OL,Oslo Børs,Euronext official,2026-10-09,72.3,69.796,60.3463,15.659,35,5.32,0.9,4.0,0,15,15,0,5,ABOVE
+Solstad Maritime ASA,SOMA.OL,Oslo Børs,Euronext official,2026-10-09,28.75,28.638,25.2374,13.474,35,4.92,0.83,1.72,0,15,15,0,5,ABOVE
+Subsea 7 SA,SUBC.OL,Oslo Børs,Euronext official,2026-10-09,338.6,329.888,293.1613,12.528,35,4.87,1.13,-1.95,0,15,15,5,0,ABOVE
+Eidesvik Offshore ASA,EIOF.OL,Oslo Børs,Euronext official,2026-10-09,17.2,17.082,15.4307,10.701,35,3.29,0.44,2.53,0,15,15,0,5,ABOVE
+Akastor ASA,AKAST.OL,Oslo Børs,Euronext official,2026-10-09,13.7,13.1505,12.4014,6.041,35,3.06,0.83,4.74,0,15,15,0,5,ABOVE
+Pexip Holding ASA,PEXIP.OL,Oslo Børs,Euronext official,2026-10-09,76.9,76.362,72.0972,5.915,35,1.62,1.17,-12.88,0,15,15,5,0,ABOVE
+Zalaris ASA,ZAL.OL,Oslo Børs,Euronext official,2026-10-09,104.5,100.436,95.17,5.533,35,1.33,0.7,3.55,0,15,15,0,5,ABOVE
+Nordic Semiconductor ASA,NOD.OL,Oslo Børs,Euronext official,2026-10-09,176.2,172.58,165.5665,4.236,35,3.1,0.86,2.0,0,15,15,0,5,ABOVE
+BALTIC SEA PROPERTIES,BALT.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,49.2,47.44,46.7915,1.386,35,-0.33,2.18,1.65,0,0,15,15,5,ABOVE / CLOSE
+SalMar ASA,SALM.OL,Oslo Børs,Euronext official,2026-10-09,551.0,549.4,544.4059,0.917,35,-0.42,1.04,10.5,0,0,15,5,15,ABOVE / CLOSE
+INIFY LABORATORIES AB,INIFY.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-08,6.15,6.747,5.4072,24.778,33,4.11,1.35,-27.01,0,15,8,10,0,ABOVE
+INSTABANK,INSTA.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,4.9,4.9562,4.2762,15.903,33,3.97,0.37,5.55,0,15,8,0,10,ABOVE
+CAMBI ASA,CAMBI.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,22.6,22.922,20.2063,13.44,33,3.89,0.96,5.48,0,15,8,0,10,ABOVE
+HAV GROUP ASA,HAV.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,11.9,13.09,11.6926,11.951,33,5.82,1.48,-17.16,0,15,8,10,0,ABOVE
+Veidekke ASA,VEI.OL,Oslo Børs,Euronext official,2026-10-09,201.0,205.314,185.0939,10.924,33,2.92,1.16,2.06,0,15,8,5,5,ABOVE
+Storebrand ASA,STB.OL,Oslo Børs,Euronext official,2026-10-09,187.9,200.198,181.2968,10.426,33,2.16,1.33,-5.68,0,15,8,10,0,ABOVE
+Elkem ASA,ELK.OL,Oslo Børs,Euronext official,2026-10-09,33.68,34.0072,30.9929,9.726,33,2.11,1.34,-3.25,0,15,8,10,0,ABOVE
+AF Gruppen ASA,AFG.OL,Oslo Børs,Euronext official,2026-10-09,186.0,191.388,182.8291,4.681,33,0.98,1.94,-9.83,0,10,8,15,0,ABOVE
+SATS ASA,SATS.OL,Oslo Børs,Euronext official,2026-10-09,41.55,43.1526,41.4203,4.182,33,1.04,1.22,-1.63,0,15,8,10,0,ABOVE
+BERGEN CARBON SOLUTIONS AS,BCS.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,6.38,6.2044,4.8209,28.698,30,5.16,0.35,-20.24,0,15,15,0,0,ABOVE
+Elmera Group ASA,ELMRA.OL,Oslo Børs,Euronext official,2026-10-09,46.85,46.165,37.9337,21.699,30,3.39,0.24,-3.13,0,15,15,0,0,ABOVE
+SPAREBANK 1 HELGELAND,HELG.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,169.0,168.0016,163.6974,2.629,30,0.3,0.04,3.72,0,10,15,0,5,ABOVE
+Gyldendal ASA,GYL.OL,Oslo Børs,Euronext official,2026-10-08,430.0,439.12,435.9421,0.729,30,0.1,2.09,2.64,0,10,0,15,5,ABOVE / CLOSE
+Borgestad ASA,BOR.OL,Oslo Børs,Euronext official,2026-10-09,17.15,17.004,16.8976,0.63,30,0.06,1.18,-1.68,0,10,15,5,0,ABOVE / CLOSE
+North Energy ASA,NORTH.OL,Euronext Expand Oslo,Euronext official,2026-10-09,2.57,2.485,2.4726,0.5,30,0.84,0.95,2.68,0,10,15,0,5,ABOVE / CLOSE
+KID ASA,KID.OL,Oslo Børs,Euronext official,2026-10-09,130.6,124.252,123.7208,0.429,30,-0.85,2.2,-2.15,0,0,15,15,0,ABOVE / CLOSE
+Interoil Exploration and Production ASA,IOX.OL,Oslo Børs,Euronext official,2026-10-09,2.54,2.7036,2.7075,-0.144,30,6.58,2.26,-17.72,0,15,0,15,0,NEW DEATH CROSS
+HUDDLESTOCK FINTECH,HUDL.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,0.65,0.566,0.5743,-1.44,30,-1.09,1.94,15.06,0,0,0,15,15,APPROACHING
+Lifecare ASA,LIFE.OL,Oslo Børs,Euronext official,2026-10-09,0.409,0.3313,0.462,-28.297,30,-49.32,10.91,40.76,0,0,0,15,15,BELOW
+2020 Bulkers Ltd.,2020.OL,Oslo Børs,Euronext official,2026-10-09,6.275,5.0264,54.5023,-90.778,30,-18.12,6.38,97.11,0,0,0,15,15,BELOW
+Prosafe SE,PRS.OL,Oslo Børs,Euronext official,2026-10-09,4.77,5.3082,4.1994,26.405,28,3.21,0.82,1.88,0,15,8,0,5,ABOVE
+BEWi ASA,BEWI.OL,Oslo Børs,Euronext official,2026-10-09,19.3,20.2904,17.613,15.201,28,1.96,0.9,3.86,0,15,8,0,5,ABOVE
+Aker Solutions ASA,AKSO.OL,Oslo Børs,Euronext official,2026-10-09,41.26,42.0408,38.4793,9.256,28,4.41,1.07,-13.94,0,15,8,5,0,ABOVE
+TGS ASA,TGS.OL,Oslo Børs,Euronext official,2026-10-09,135.0,137.584,126.019,9.177,28,4.55,1.05,-3.35,0,15,8,5,0,ABOVE
+DNB Bank ASA,DNB.OL,Oslo Børs,Euronext official,2026-10-09,302.4,313.52,289.6746,8.232,28,2.04,1.09,-3.15,0,15,8,5,0,ABOVE
+Constellation Oil Services Holding S.A.,COSH.OL,Oslo Børs,Euronext official,2026-10-09,128.0,135.8274,129.7694,4.668,25,2.13,1.42,-8.57,0,15,0,10,0,ABOVE
+AURSKOG SPAREBANK,AURG.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,263.1,257.174,252.8221,1.721,25,0.93,0.27,-1.11,0,10,15,0,0,ABOVE / CLOSE
+Saga Pure ASA,SAGA.OL,Oslo Børs,Euronext official,2026-10-09,1.58,1.5531,1.5304,1.487,25,0.94,0.33,-6.87,0,10,15,0,0,ABOVE / CLOSE
+AASEN SPAREBANK,AASB.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,141.0,135.2972,133.701,1.194,25,0.23,0.43,-0.1,0,10,15,0,0,ABOVE / CLOSE
+HAUGESUND SPAREBANK,HGSB.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,155.5,158.8072,157.7685,0.658,25,0.42,10.91,-5.63,0,10,0,15,0,ABOVE / CLOSE
+GRONG SPAREBANK,GRONG.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,169.1,184.3676,183.3948,0.53,25,0.87,16.33,-18.41,0,10,0,15,0,ABOVE / CLOSE
+Havila Shipping ASA,HAVI.OL,Oslo Børs,Euronext official,2026-10-09,1.12,1.1182,1.1145,0.336,25,0.13,0.9,-7.92,0,10,15,0,0,ABOVE / CLOSE
+Observe Medical ASA,OBSRV.OL,Euronext Expand Oslo,Euronext official,2026-10-09,0.95,0.9601,0.9702,-1.043,25,2.92,1.39,-14.83,0,15,0,10,0,APPROACHING
+Reach Subsea ASA,REACH.OL,Oslo Børs,Euronext official,2026-10-09,6.18,6.1238,6.2091,-1.374,25,0.34,0.93,20.69,0,10,0,0,15,APPROACHING
+Cadeler A/S,CADLR.OL,Oslo Børs,Euronext official,2026-10-09,52.0,56.469,57.324,-1.492,25,1.89,1.29,-13.6,0,15,0,10,0,APPROACHING
+Kongsberg Gruppen ASA,KOG.OL,Oslo Børs,Euronext official,2026-10-09,295.4,312.618,324.4382,-3.643,25,2.22,1.02,0.46,0,15,0,5,5,BELOW
+Magnora ASA,MGN.OL,Oslo Børs,Euronext official,2026-10-09,21.9,22.146,23.4376,-5.511,25,0.85,1.58,-10.5,0,10,0,15,0,BELOW
+IDEX Biometrics ASA,IDEX.OL,Oslo Børs,Euronext official,2026-10-09,7.7,6.8328,7.6511,-10.695,25,3.18,1.29,-9.06,0,15,0,10,0,BELOW
+Sentia ASA,SNTIA.OL,Oslo Børs,Euronext official,2026-10-09,81.0,82.97,73.0078,13.645,23,3.94,0.99,-3.8,0,15,8,0,0,ABOVE
+Petrolia SE,PSE.OL,Oslo Børs,Euronext official,2026-10-09,6.1,6.265,5.6372,11.137,23,3.25,0.68,-1.92,0,15,8,0,0,ABOVE
+Zelluna ASA,ZLNA.OL,Oslo Børs,Euronext official,2026-10-09,19.65,21.703,19.6361,10.526,23,5.55,0.29,-15.99,0,15,8,0,0,ABOVE
+Atea ASA,ATEA.OL,Oslo Børs,Euronext official,2026-10-09,164.0,170.52,157.0709,8.562,23,1.14,0.83,-5.31,0,15,8,0,0,ABOVE
+SoftwareOne Holding AG,SWON.OL,Oslo Børs,Euronext official,2026-10-09,103.8,104.254,96.1527,8.425,23,-0.81,1.27,1.04,0,0,8,10,5,ABOVE
+Polaris Media ASA,POL.OL,Oslo Børs,Euronext official,2026-10-09,60.0,60.516,57.3441,5.531,23,2.19,0.44,-2.21,0,15,8,0,0,ABOVE
+Fjord Defence Group ASA,DFENS.OL,Oslo Børs,Euronext official,2026-10-09,13.1,14.84,15.19,-2.304,20,0.61,1.24,-17.68,0,10,0,10,0,BELOW
+Austevoll Seafood ASA,AUSS.OL,Oslo Børs,Euronext official,2026-10-09,81.7,84.944,86.9973,-2.36,20,0.02,1.24,-5.92,0,10,0,10,0,BELOW
+Odfjell Technology Ltd,OTL.OL,Oslo Børs,Euronext official,2026-10-09,60.8,60.064,61.5165,-2.361,20,1.22,0.77,1.92,0,15,0,0,5,BELOW
+Archer Limited,ARCH.OL,Oslo Børs,Euronext official,2026-10-09,22.0,23.321,23.9103,-2.465,20,0.55,1.38,-11.31,0,10,0,10,0,BELOW
+GREEN MINERALS AS,GEM.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,1.19,1.2803,1.32,-3.009,20,-3.22,1.56,0.94,0,0,0,15,5,BELOW
+BW Offshore Limited,BWO.OL,Oslo Børs,Euronext official,2026-10-09,41.15,41.4544,46.2302,-10.33,20,0.57,1.2,-14.02,0,10,0,10,0,BELOW
+RomReal Ltd.,ROM.OL,Euronext Expand Oslo,Euronext official,2026-10-08,2.7,2.768,2.7065,2.272,15,1.08,0.92,-2.59,0,15,0,0,0,ABOVE
+Soiltech ASA,STECH.OL,Oslo Børs,Euronext official,2026-10-09,81.0,85.316,83.673,1.964,15,1.74,0.62,-14.7,0,15,0,0,0,ABOVE / CLOSE
+KRAFT BANK ASA,KRAB.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,12.4,13.0114,12.8205,1.489,15,1.91,0.82,-9.69,0,15,0,0,0,ABOVE / CLOSE
+5th Planet Games A/S,5PG.OL,Euronext Expand Oslo,Euronext official,2026-10-09,1.08,1.3573,1.3425,1.099,15,3.8,0.7,-25.9,0,15,0,0,0,ABOVE / CLOSE
+Cloudberry Clean Energy ASA,CLOUD.OL,Oslo Børs,Euronext official,2026-10-09,11.54,12.7444,12.6219,0.971,15,-0.61,3.78,-15.15,0,0,0,15,0,ABOVE / CLOSE
+ABG Sundal Collier Holding ASA,ABG.OL,Oslo Børs,Euronext official,2026-10-09,7.24,7.3424,7.3513,-0.12,15,-0.27,2.58,-3.76,0,0,0,15,0,APPROACHING
+Scana ASA,SCANA.OL,Oslo Børs,Euronext official,2026-10-09,1.415,1.4401,1.4499,-0.679,15,-0.02,27.13,-4.95,0,0,0,15,0,APPROACHING
+KALDVIK AS,KLDVK.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,4.88,5.3072,5.3673,-1.12,15,-7.61,1.62,-9.62,0,0,0,15,0,APPROACHING
+Capsol Technologies ASA,CAPSL.OL,Oslo Børs,Euronext official,2026-10-09,4.39,4.8672,4.9351,-1.377,15,-4.11,1.63,-10.9,0,0,0,15,0,APPROACHING
+Voss Veksel- og Landmandsbank ASA,VVL.OL,Oslo Børs,Euronext official,2026-10-09,416.0,431.12,437.1431,-1.378,15,1.31,0.91,-16.8,0,15,0,0,0,APPROACHING
+Mowi ASA,MOWI.OL,Oslo Børs,Euronext official,2026-10-09,203.8,201.7272,205.1686,-1.677,15,-1.11,1.21,4.07,0,0,0,10,5,APPROACHING
+Selvaag Bolig ASA,SBO.OL,Oslo Børs,Euronext official,2026-10-09,29.95,32.251,33.2577,-3.027,15,-0.74,3.32,-15.1,0,0,0,15,0,BELOW
+HUDDLY AS,HDLY.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,22.4,24.378,25.197,-3.25,15,2.92,0.61,-29.38,0,15,0,0,0,BELOW
+Protector Forsikring ASA,PROT.OL,Oslo Børs,Euronext official,2026-10-09,416.0,460.982,478.8339,-3.728,15,-1.01,1.72,-19.71,0,0,0,15,0,BELOW
+Norsk Hydro ASA,NHY.OL,Oslo Børs,Euronext official,2026-10-09,78.9,88.0164,91.5809,-3.892,15,1.2,0.84,-16.64,0,15,0,0,0,BELOW
+Entra ASA,ENTRA.OL,Oslo Børs,Euronext official,2026-10-09,90.9,101.92,106.1348,-3.971,15,-1.2,2.82,-17.74,0,0,0,15,0,BELOW
+Vend Marketplaces ASA,VEND.OL,Oslo Børs,Euronext official,2026-10-09,201.2,234.812,245.8076,-4.473,15,-2.44,1.89,-23.45,0,0,0,15,0,BELOW
+Yara International ASA,YAR.OL,Oslo Børs,Euronext official,2026-10-09,413.6,438.292,459.7455,-4.666,15,1.48,0.99,-17.04,0,15,0,0,0,BELOW
+Otovo ASA,OTOVO.OL,Oslo Børs,Euronext official,2026-10-09,9.44,10.975,11.5828,-5.248,15,2.03,0.17,-19.49,0,15,0,0,0,BELOW
+Multiconsult ASA,MULTI.OL,Oslo Børs,Euronext official,2026-10-09,134.0,145.904,154.0371,-5.28,15,-1.15,4.8,-14.89,0,0,0,15,0,BELOW
+SED Energy Holdings Plc,ENH.OL,Oslo Børs,Euronext official,2026-10-09,6.42,7.2987,7.7346,-5.636,15,-1.0,1.82,-19.31,0,0,0,15,0,BELOW
+Agilyx ASA,AGLX.OL,Oslo Børs,Euronext official,2026-10-09,15.4,17.056,18.5657,-8.132,15,-4.17,5.1,-16.03,0,0,0,15,0,BELOW
+Scatec ASA,SCATC.OL,Oslo Børs,Euronext official,2026-10-09,104.0,98.23,107.3305,-8.479,15,-0.12,1.25,1.96,0,0,0,10,5,BELOW
+Northern Ocean Ltd.,NOL.OL,Oslo Børs,Euronext official,2026-10-09,6.6,7.3464,8.2374,-10.817,15,-1.52,3.37,-17.07,0,0,0,15,0,BELOW
+ARCTIC FISH HOLDING AS,AFISH.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,24.4,25.636,28.767,-10.884,15,-1.95,1.53,-19.39,0,0,0,15,0,BELOW
+PPI Public Property Invest AB (publ),PUBLI.OL,Oslo Børs,Euronext official,2026-10-09,15.84,17.5333,19.7316,-11.141,15,-2.23,3.35,-24.48,0,0,0,15,0,BELOW
+Borr Drilling Limited,BORR.OL,Oslo Børs,Euronext official,2026-10-09,44.575,40.5797,46.3935,-12.531,15,-0.06,2.25,-1.83,0,0,0,15,0,BELOW
+Elliptic Laboratories ASA,ELABS.OL,Oslo Børs,Euronext official,2026-10-09,3.315,3.0514,3.5247,-13.427,15,-8.14,0.93,17.93,0,0,0,0,15,BELOW
+DOLPHIN DRILLING AS,DDRIL.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,1.575,2.1569,2.5258,-14.606,15,-4.03,2.95,-47.4,0,0,0,15,0,BELOW
+Envipco Holding N.V.,ENVIP.OL,Oslo Børs,Euronext official,2026-10-09,42.0,39.569,46.923,-15.672,15,-4.74,1.33,2.66,0,0,0,10,5,BELOW
+Hexagon Purus ASA,HPUR.OL,Oslo Børs,Euronext official,2026-10-09,4.72,6.745,11.0003,-38.683,15,-10.0,2.55,-65.97,0,0,0,15,0,BELOW
+EXACT THERAPEUTICS,EXTX.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,0.7,0.7236,1.2581,-42.487,15,-6.44,5.58,-0.04,0,0,0,15,0,BELOW
+THE KINGFISH COMPANY,KING.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,0.6,1.0737,1.9928,-46.12,15,-14.47,4.19,-32.14,0,0,0,15,0,BELOW
+DESERT CONTROL AS,DSRT.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,0.226,0.3459,1.1058,-68.724,15,-14.48,1.63,-49.33,0,0,0,15,0,BELOW
+Techstep ASA,TECH.OL,Oslo Børs,Euronext official,2026-10-09,2.31,2.5115,8.1015,-69.0,15,-10.69,3.79,-76.43,0,0,0,15,0,BELOW
+Nordic Mining ASA,NOM.OL,Oslo Børs,Euronext official,2026-10-09,0.88,2.1361,8.5397,-74.986,15,-14.63,2.57,-87.13,0,0,0,15,0,BELOW
+Thor Medical ASA,TRMED.OL,Oslo Børs,Euronext official,2026-10-09,4.455,5.282,4.7762,10.589,10,0.83,0.57,-1.34,0,10,0,0,0,ABOVE
+Gjensidige Forsikring ASA,GJF.OL,Oslo Børs,Euronext official,2026-10-09,254.2,273.932,264.4065,3.603,10,-0.25,1.31,-15.29,0,0,0,10,0,ABOVE
+ADS MARITIME HOLDING PLC,ADS.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,2.42,2.5256,2.4654,2.442,10,0.74,0.5,-6.93,0,10,0,0,0,ABOVE
+Bakkafrost P/f,BAKKA.OL,Oslo Børs,Euronext official,2026-10-09,434.8,453.892,449.0868,1.07,10,-0.86,1.43,-3.15,0,0,0,10,0,ABOVE / CLOSE
+Hofseth BioCare ASA,HBC.OL,Oslo Børs,Euronext official,2026-10-09,1.375,1.3405,1.344,-0.264,10,-1.13,1.43,-10.48,0,0,0,10,0,APPROACHING
+Questerre Energy Corporation,QEC.OL,Oslo Børs,Euronext official,2026-10-09,1.98,1.9231,1.9413,-0.939,10,-0.98,0.96,8.49,0,0,0,0,10,APPROACHING
+Bien Sparebank ASA,BIEN.OL,Oslo Børs,Euronext official,2026-10-09,144.0,145.26,147.8296,-1.738,10,-0.24,1.21,-5.31,0,0,0,10,0,APPROACHING
+Europris ASA,EPR.OL,Oslo Børs,Euronext official,2026-10-09,82.8,85.094,87.3644,-2.599,10,-0.64,1.42,-4.7,0,0,0,10,0,BELOW
+StrongPoint ASA,STRO.OL,Oslo Børs,Euronext official,2026-10-09,9.84,9.8248,10.2356,-4.013,10,0.07,0.91,-7.88,0,10,0,0,0,BELOW
+Aqualis ASA,AQUA.OL,Oslo Børs,Euronext official,2026-10-09,8.8,8.776,9.2501,-5.125,10,0.76,0.43,-5.53,0,10,0,0,0,BELOW
+Tomra Systems ASA,TOM.OL,Oslo Børs,Euronext official,2026-10-09,90.3,100.224,107.678,-6.923,10,-3.29,1.21,-12.02,0,0,0,10,0,BELOW
+Orkla ASA,ORK.OL,Oslo Børs,Euronext official,2026-10-09,93.05,96.007,106.1548,-9.559,10,-1.02,1.25,-17.19,0,0,0,10,0,BELOW
+Grieg Seafood ASA,GSF.OL,Oslo Børs,Euronext official,2026-10-09,23.08,27.3812,32.3129,-15.262,10,-3.45,1.37,-26.91,0,0,0,10,0,BELOW
+GOLDEN ENERGY OFFSHORE SERVICES,GEOS.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,6.45,6.6917,6.0723,10.2,8,-2.08,0.72,-12.41,0,0,8,0,0,ABOVE
+Bouvet ASA,BOUV.OL,Oslo Børs,Euronext official,2026-10-09,47.55,47.36,47.9961,-1.325,5,-2.11,0.69,2.76,0,0,0,0,5,APPROACHING
+Eqva ASA,EQVA.OL,Oslo Børs,Euronext official,2026-10-09,2.7,2.9802,3.1201,-4.485,5,-3.03,1.07,-20.93,0,0,0,5,0,BELOW
+Hermana Holding ASA,HERMA.OL,Oslo Børs,Euronext official,2026-10-09,14.8,14.774,16.0862,-8.158,5,-0.74,1.03,-9.82,0,0,0,5,0,BELOW
+Itera ASA,ITERA.OL,Oslo Børs,Euronext official,2026-10-09,5.7,6.1716,6.7472,-8.53,5,-2.72,1.09,-15.97,0,0,0,5,0,BELOW
+NEL ASA,NEL.OL,Oslo Børs,Euronext official,2026-10-09,1.994,2.0972,2.3288,-9.946,5,-1.23,1.0,-13.63,0,0,0,5,0,BELOW
+Telenor ASA,TEL.OL,Oslo Børs,Euronext official,2026-10-09,124.5,132.644,147.4939,-10.068,5,-0.73,1.12,-20.67,0,0,0,5,0,BELOW
+BEVEST ASA,BINT.OL,Oslo Børs,Euronext official,2026-10-09,20.1,22.422,25.9533,-13.606,5,-5.79,1.01,-11.38,0,0,0,5,0,BELOW
+Salmon Evolution ASA,SALME.OL,Oslo Børs,Euronext official,2026-10-09,3.08,3.6031,4.3308,-16.803,5,-3.62,1.03,-28.79,0,0,0,5,0,BELOW
+Axactor ASA,ACR.OL,Oslo Børs,Euronext official,2026-10-09,4.08,4.9115,5.9887,-17.987,5,-4.43,1.06,-20.66,0,0,0,5,0,BELOW
+INDUCT,INDCT.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,0.552,0.6974,2.3175,-69.909,5,-13.7,1.2,-44.25,0,0,0,5,0,BELOW
+ANDFJORD SALMON GROUP AS,ANDF.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,28.1,28.542,28.3915,0.53,0,-0.06,0.89,-7.4,0,0,0,0,0,ABOVE / CLOSE
+Norconsult ASA,NORCO.OL,Oslo Børs,Euronext official,2026-10-09,37.25,38.398,38.4097,-0.031,0,-1.19,0.8,-2.97,0,0,0,0,0,APPROACHING
+Awilco LNG ASA,ALNG.OL,Euronext Expand Oslo,Euronext official,2026-10-09,3.34,3.404,3.4365,-0.946,0,-0.65,0.9,-16.0,0,0,0,0,0,APPROACHING
+JÆREN SPAREBANK,JAREN.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,343.0,337.254,340.8189,-1.046,0,-0.5,0.71,-3.59,0,0,0,0,0,APPROACHING
+FLEKKEFJORD SPAREBANK,FFSB.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-08,113.52,115.6732,117.2142,-1.315,0,-0.27,0.46,-8.66,0,0,0,0,0,APPROACHING
+Kongsberg Automotive ASA,KOA.OL,Oslo Børs,Euronext official,2026-10-09,1.94,2.023,2.0614,-1.863,0,-0.23,0.8,-8.79,0,0,0,0,0,APPROACHING
+ArcticZymes Technologies ASA,AZT.OL,Oslo Børs,Euronext official,2026-10-09,19.65,20.406,20.8063,-1.924,0,-0.48,0.85,-1.61,0,0,0,0,0,APPROACHING
+Lerøy Seafood Group ASA,LSG.OL,Oslo Børs,Euronext official,2026-10-09,41.64,42.7976,43.7087,-2.085,0,-0.53,0.8,-0.74,0,0,0,0,0,BELOW
+S.D. Standard ETC Plc,SDSD.OL,Oslo Børs,Euronext official,2026-10-09,1.74,1.7932,1.8398,-2.532,0,-0.4,0.99,-9.97,0,0,0,0,0,BELOW
+Link Mobility Group Holding ASA,LINK.OL,Oslo Børs,Euronext official,2026-10-09,23.96,24.7088,25.5768,-3.394,0,-2.73,0.92,-14.14,0,0,0,0,0,BELOW
+HAVILA KYSTRUTEN AS,HKY.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,52.5,51.762,53.8343,-3.849,0,-1.63,0.96,-16.32,0,0,0,0,0,BELOW
+Borregaard ASA,BRG.OL,Oslo Børs,Euronext official,2026-10-09,151.0,153.848,161.3982,-4.678,0,-2.18,0.92,-4.24,0,0,0,0,0,BELOW
+Vistin Pharma ASA,VISTN.OL,Oslo Børs,Euronext official,2026-10-09,18.1,19.09,20.1936,-5.465,0,-0.46,0.52,-17.44,0,0,0,0,0,BELOW
+Gentian Diagnostics ASA,GENT.OL,Oslo Børs,Euronext official,2026-10-09,39.0,38.942,41.8275,-6.899,0,-3.73,0.75,-2.68,0,0,0,0,0,BELOW
+Ensurge Micropower ASA,ENSU.OL,Oslo Børs,Euronext official,2026-10-09,0.573,0.6208,0.6781,-8.453,0,-3.76,0.72,-24.49,0,0,0,0,0,BELOW
+Arribatec Group ASA,ARR.OL,Oslo Børs,Euronext official,2026-10-09,5.38,5.6748,6.2,-8.471,0,-1.67,0.81,-1.85,0,0,0,0,0,BELOW
+NORBIT ASA,NORBT.OL,Oslo Børs,Euronext official,2026-10-09,158.4,165.462,182.2704,-9.222,0,-0.6,0.8,-11.86,0,0,0,0,0,BELOW
+Elopak ASA,ELO.OL,Oslo Børs,Euronext official,2026-10-09,34.95,35.899,39.9369,-10.111,0,-2.92,0.52,-3.56,0,0,0,0,0,BELOW
+Webstep ASA,WSTEP.OL,Oslo Børs,Euronext official,2026-10-09,12.9,13.729,15.2947,-10.237,0,-2.31,0.53,-13.49,0,0,0,0,0,BELOW
+AYFIE INTERNATIONAL AS,AIX.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,3.07,3.2938,3.6725,-10.312,0,-1.83,0.91,-9.07,0,0,0,0,0,BELOW
+Norwegian Air Shuttle ASA,NAS.OL,Oslo Børs,Euronext official,2026-10-09,11.06,12.6043,14.1636,-11.009,0,-2.96,0.8,-20.88,0,0,0,0,0,BELOW
+ARCTIC BIOSCIENCE AS,ABS.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,2.64,2.8224,3.18,-11.244,0,-2.75,0.17,-23.83,0,0,0,0,0,BELOW
+"HSPG.OL,0P0000EEEH,0",HSPG.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,125.0,129.5964,146.2963,-11.415,0,-2.52,0.48,-21.47,0,0,0,0,0,BELOW
+ACE DIGITAL AS,ACED.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,0.384,0.3937,0.4571,-13.871,0,-5.03,0.47,-3.72,0,0,0,0,0,BELOW
+Photocure ASA,PHO.OL,Oslo Børs,Euronext official,2026-10-09,49.4,52.22,61.4375,-15.003,0,-2.19,0.84,-19.84,0,0,0,0,0,BELOW
+ICELANDIC SALMON,ISLAX.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-08,58.0,58.43,68.863,-15.15,0,-3.58,0.57,-11.31,0,0,0,0,0,BELOW
+Nordic Financials ASA,NOFIN.OL,Euronext Expand Oslo,Euronext official,2026-10-09,1.31,1.4522,1.7124,-15.193,0,-2.74,0.57,-28.7,0,0,0,0,0,BELOW
+BARRAMUNDI GROUP LTD.,BARRA.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,0.43,0.5669,0.6797,-16.588,0,-1.17,0.48,-33.64,0,0,0,0,0,BELOW
+Pareto Bank ASA,PARB.OL,Oslo Børs,Euronext official,2026-10-09,50.3,57.424,69.0799,-16.873,0,-3.39,0.88,-31.98,0,0,0,0,0,BELOW
+Cavendish Hydrogen ASA,CAVEN.OL,Oslo Børs,Euronext official,2026-10-09,5.14,5.5656,6.7937,-18.077,0,-3.64,0.34,-18.19,0,0,0,0,0,BELOW
+Komplett ASA,KOMPL.OL,Oslo Børs,Euronext official,2026-10-09,6.9,7.0688,8.8243,-19.894,0,-5.49,0.7,-5.31,0,0,0,0,0,BELOW
+Navamedic ASA,NAVA.OL,Oslo Børs,Euronext official,2026-10-09,13.3,14.49,18.2283,-20.508,0,-5.07,0.7,-23.21,0,0,0,0,0,BELOW
+CYVIZ AS,CYVIZ.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,22.1,23.0,30.1605,-23.741,0,-4.43,0.19,-16.55,0,0,0,0,0,BELOW
+GIGANTE SALMON AS,GIGA.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,4.98,5.4192,7.3083,-25.849,0,-3.57,0.8,-31.42,0,0,0,0,0,BELOW
+BLACK SEA PROPERTY,BSP.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,3.08,2.4478,3.3386,-26.682,0,-7.63,0.8,-2.64,0,0,0,0,0,BELOW
+Aqua Bio Technology ASA,ABTEC.OL,Euronext Expand Oslo,Euronext official,2026-10-09,4.68,4.8954,7.323,-33.15,0,-22.15,0.57,-6.99,0,0,0,0,0,BELOW
+Appear ASA,APR.OL,Oslo Børs,Euronext official,2026-10-09,34.0,38.966,60.7994,-35.911,0,-6.9,0.69,-28.03,0,0,0,0,0,BELOW
+Dellia Group ASA,DELIA.OL,Oslo Børs,Euronext official,2026-10-09,19.14,22.0062,36.2946,-39.368,0,-5.41,0.31,-38.15,0,0,0,0,0,BELOW
+EAM SOLAR AS,EAM.OL,Growth/Oslo candidate,Yahoo candidate,2026-10-09,0.666,0.6958,1.3017,-46.543,0,-1.61,0.61,-30.31,0,0,0,0,0,BELOW
+HydrogenPro ASA,HYPRO.OL,Oslo Børs,Euronext official,2026-10-09,0.47,0.5304,1.4517,-63.46,0,-11.38,0.52,-46.85,0,0,0,0,0,BELOW
+Atlantic Sapphire ASA,ASA.OL,Oslo Børs,Euronext official,2026-10-09,0.76,0.8123,2.7253,-70.195,0,-19.2,0.37,-35.58,0,0,0,0,0,BELOW
+Norse Atlantic ASA,NORSE.OL,Euronext Expand Oslo,Euronext official,2026-10-09,0.2925,0.321,2.553,-87.426,0,-19.33,0.63,-35.66,0,0,0,0,0,BELOW
+Next Biometrics Group ASA,NEXT.OL,Oslo Børs,Euronext official,2026-10-08,0.232,0.2594,4.5757,-94.331,0,-24.97,0.76,-22.0,0,0,0,0,0,BELOW

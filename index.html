@@ -1,0 +1,477 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Oslo Golden Cross Dashboard</title>
+<style>
+body{font-family:system-ui,-apple-system,sans-serif;margin:28px;background:#f6f7f9;color:#17202a}
+.cards{display:flex;gap:14px;flex-wrap:wrap;margin:20px 0} .card{background:white;padding:16px 22px;border-radius:12px;box-shadow:0 1px 4px #bbb}
+.big{font-size:28px;font-weight:700} table{border-collapse:collapse;width:100%;background:white} th,td{padding:9px 11px;border-bottom:1px solid #ddd;text-align:right}
+th:first-child,td:first-child,th:nth-child(2),td:nth-child(2),th:nth-child(3),td:nth-child(3),th:last-child,td:last-child{text-align:left}
+th{position:sticky;top:0;background:#17202a;color:white;cursor:pointer} .gold{background:#fff3b0;font-weight:700} .near{background:#e8f4ff}
+input{padding:10px;width:min(420px,90%);margin:10px 0 16px;border:1px solid #aaa;border-radius:8px}
+</style></head><body>
+<h1>Oslo Golden Cross Dashboard</h1>
+<p><strong>Signal definition:</strong> Golden Cross = SMA50 crossing from at/below SMA200 to above SMA200 on the latest available daily bar. “Approaching” = SMA50 within 2% below SMA200.</p>
+<p><strong>Technical Score / 80:</strong> new Golden Cross (20), rising SMA200 (15), bullish price structure (15), volume confirmation (15), and 3-month relative strength vs OSEBX (15). This is a screening score, not a buy signal. Fundamental/earnings points are not included yet.</p>
+<p>Generated 2026-10-09 21:04 UTC from Yahoo Finance daily price data.</p>
+<div class="cards"><div class="card"><div class="big">237</div>Oslo shares discovered</div>
+<div class="card"><div class="big">226</div>Successfully analysed</div>
+<div class="card"><div class="big">0</div>New Golden Crosses</div>
+<div class="card"><div class="big">22</div>Within 2% below crossover</div>
+<div class="card"><div class="big">11</div>Data errors</div></div>
+<input id="q" placeholder="Search company, ticker or status…" onkeyup="filterTable()">
+<table id="stocks"><thead><tr><th>Company</th><th>Ticker</th><th>Market</th><th>Price</th><th>SMA50</th><th>SMA200</th><th>50 vs 200</th><th>Score</th><th>SMA200 20d</th><th>Volume</th><th>RS vs OSEBX</th><th>Status</th></tr></thead>
+<tbody><tr class=""><td>Hunter Group ASA</td><td>HUNT.OL</td>
+<td>Euronext Expand Oslo</td><td>19.70</td><td>13.22</td><td>6.71</td>
+<td data-order="96.965">+96.97%</td><td data-order="60"><strong>60/80</strong></td><td>+32.41%</td><td>1.97×</td><td>+139.72%</td><td>ABOVE</td></tr><tr class=""><td>CODELAB CAPITAL AS</td><td>CODE.OL</td>
+<td>Growth/Oslo candidate</td><td>5.92</td><td>4.24</td><td>3.18</td>
+<td data-order="33.512">+33.51%</td><td data-order="60"><strong>60/80</strong></td><td>+8.93%</td><td>2.38×</td><td>+63.84%</td><td>ABOVE</td></tr><tr class=""><td>Okeanis Eco Tankers Corp.</td><td>OET.OL</td>
+<td>Oslo Børs</td><td>896.00</td><td>683.63</td><td>515.88</td>
+<td data-order="32.516">+32.52%</td><td data-order="60"><strong>60/80</strong></td><td>+9.18%</td><td>1.81×</td><td>+59.35%</td><td>ABOVE</td></tr><tr class=""><td>Wallenius Wilhelmsen ASA</td><td>WAWI.OL</td>
+<td>Oslo Børs</td><td>173.00</td><td>167.32</td><td>133.50</td>
+<td data-order="25.332">+25.33%</td><td data-order="60"><strong>60/80</strong></td><td>+6.62%</td><td>3.42×</td><td>+18.71%</td><td>ABOVE</td></tr><tr class=""><td>Goodtech ASA</td><td>GOD.OL</td>
+<td>Oslo Børs</td><td>17.20</td><td>14.33</td><td>11.93</td>
+<td data-order="20.128">+20.13%</td><td data-order="60"><strong>60/80</strong></td><td>+5.21%</td><td>3.88×</td><td>+28.03%</td><td>ABOVE</td></tr><tr class=""><td>ContextVision AB</td><td>CONTX.OL</td>
+<td>Oslo Børs</td><td>4.99</td><td>4.27</td><td>3.69</td>
+<td data-order="15.662">+15.66%</td><td data-order="60"><strong>60/80</strong></td><td>+3.29%</td><td>3.24×</td><td>+50.63%</td><td>ABOVE</td></tr><tr class=""><td>Wilh. Wilhelmsen Holding ASA</td><td>WWI.OL</td>
+<td>Oslo Børs</td><td>914.00</td><td>842.04</td><td>729.80</td>
+<td data-order="15.38">+15.38%</td><td data-order="60"><strong>60/80</strong></td><td>+5.07%</td><td>2.09×</td><td>+19.73%</td><td>ABOVE</td></tr><tr class=""><td>Hafnia Limited</td><td>HAFNI.OL</td>
+<td>Oslo Børs</td><td>103.30</td><td>82.62</td><td>72.29</td>
+<td data-order="14.297">+14.30%</td><td data-order="60"><strong>60/80</strong></td><td>+4.96%</td><td>6.15×</td><td>+37.92%</td><td>ABOVE</td></tr><tr class=""><td>Vow ASA</td><td>VOW.OL</td>
+<td>Oslo Børs</td><td>2.92</td><td>2.59</td><td>2.48</td>
+<td data-order="4.488">+4.49%</td><td data-order="60"><strong>60/80</strong></td><td>+1.83%</td><td>1.68×</td><td>+25.34%</td><td>ABOVE</td></tr><tr class=""><td>Zaptec ASA</td><td>ZAP.OL</td>
+<td>Oslo Børs</td><td>61.20</td><td>54.53</td><td>39.67</td>
+<td data-order="37.459">+37.46%</td><td data-order="55"><strong>55/80</strong></td><td>+10.80%</td><td>1.21×</td><td>+26.02%</td><td>ABOVE</td></tr><tr class=""><td>Frontline plc</td><td>FRO.OL</td>
+<td>Oslo Børs</td><td>543.60</td><td>434.14</td><td>348.69</td>
+<td data-order="24.506">+24.51%</td><td data-order="55"><strong>55/80</strong></td><td>+7.74%</td><td>1.31×</td><td>+40.17%</td><td>ABOVE</td></tr><tr class=""><td>CMB.TECH NV</td><td>CMBTO.OL</td>
+<td>Oslo Børs</td><td>199.00</td><td>175.41</td><td>141.63</td>
+<td data-order="23.85">+23.85%</td><td data-order="55"><strong>55/80</strong></td><td>+6.24%</td><td>1.20×</td><td>+24.08%</td><td>ABOVE</td></tr><tr class=""><td>AKVA Group ASA</td><td>AKVA.OL</td>
+<td>Oslo Børs</td><td>157.50</td><td>140.94</td><td>118.23</td>
+<td data-order="19.21">+19.21%</td><td data-order="55"><strong>55/80</strong></td><td>+5.22%</td><td>1.34×</td><td>+20.05%</td><td>ABOVE</td></tr><tr class=""><td>Equinor ASA</td><td>EQNR.OL</td>
+<td>Oslo Børs</td><td>417.90</td><td>398.36</td><td>336.62</td>
+<td data-order="18.342">+18.34%</td><td data-order="55"><strong>55/80</strong></td><td>+5.80%</td><td>1.21×</td><td>+15.00%</td><td>ABOVE</td></tr><tr class=""><td>NRC Group ASA</td><td>NRC.OL</td>
+<td>Oslo Børs</td><td>9.70</td><td>9.34</td><td>8.60</td>
+<td data-order="8.542">+8.54%</td><td data-order="55"><strong>55/80</strong></td><td>+2.33%</td><td>1.41×</td><td>+11.56%</td><td>ABOVE</td></tr><tr class=""><td>BW Energy Limited</td><td>BWE.OL</td>
+<td>Oslo Børs</td><td>63.90</td><td>56.56</td><td>53.10</td>
+<td data-order="6.516">+6.52%</td><td data-order="55"><strong>55/80</strong></td><td>+4.00%</td><td>1.35×</td><td>+19.74%</td><td>ABOVE</td></tr><tr class=""><td>DEEP VALUE DRILLER AS</td><td>DVD.OL</td>
+<td>Growth/Oslo candidate</td><td>1.93</td><td>1.48</td><td>1.42</td>
+<td data-order="4.126">+4.13%</td><td data-order="55"><strong>55/80</strong></td><td>+0.95%</td><td>10.99×</td><td>+29.56%</td><td>ABOVE</td></tr><tr class=""><td>Bonheur ASA</td><td>BONHR.OL</td>
+<td>Oslo Børs</td><td>263.00</td><td>251.45</td><td>243.80</td>
+<td data-order="3.138">+3.14%</td><td data-order="55"><strong>55/80</strong></td><td>+1.70%</td><td>1.97×</td><td>+8.55%</td><td>ABOVE</td></tr><tr class=""><td>Circio Holding ASA</td><td>CRNA.OL</td>
+<td>Oslo Børs</td><td>11.14</td><td>10.92</td><td>7.18</td>
+<td data-order="51.939">+51.94%</td><td data-order="50"><strong>50/80</strong></td><td>+16.03%</td><td>1.00×</td><td>+43.23%</td><td>ABOVE</td></tr><tr class=""><td>BYGGMA</td><td>BMA.OL</td>
+<td>Growth/Oslo candidate</td><td>23.80</td><td>23.54</td><td>19.44</td>
+<td data-order="21.114">+21.11%</td><td data-order="50"><strong>50/80</strong></td><td>+5.33%</td><td>1.15×</td><td>+14.29%</td><td>ABOVE</td></tr><tr class=""><td>MPC Container Ships ASA</td><td>MPCC.OL</td>
+<td>Oslo Børs</td><td>28.94</td><td>26.80</td><td>22.84</td>
+<td data-order="17.34">+17.34%</td><td data-order="50"><strong>50/80</strong></td><td>+5.51%</td><td>1.04×</td><td>+13.96%</td><td>ABOVE</td></tr><tr class=""><td>Medistim ASA</td><td>MEDI.OL</td>
+<td>Oslo Børs</td><td>281.00</td><td>246.92</td><td>228.53</td>
+<td data-order="8.045">+8.04%</td><td data-order="50"><strong>50/80</strong></td><td>+0.55%</td><td>1.50×</td><td>+17.94%</td><td>ABOVE</td></tr><tr class=""><td>DNO ASA</td><td>DNO.OL</td>
+<td>Oslo Børs</td><td>19.55</td><td>18.37</td><td>17.21</td>
+<td data-order="6.727">+6.73%</td><td data-order="50"><strong>50/80</strong></td><td>+3.21%</td><td>1.16×</td><td>+11.70%</td><td>ABOVE</td></tr><tr class=""><td>Odfjell Drilling Ltd</td><td>ODL.OL</td>
+<td>Oslo Børs</td><td>101.20</td><td>95.53</td><td>90.80</td>
+<td data-order="5.207">+5.21%</td><td data-order="50"><strong>50/80</strong></td><td>+2.43%</td><td>1.04×</td><td>+18.61%</td><td>ABOVE</td></tr><tr class=""><td>Odfjell SE</td><td>ODF.OL</td>
+<td>Oslo Børs</td><td>129.20</td><td>119.55</td><td>114.81</td>
+<td data-order="4.128">+4.13%</td><td data-order="50"><strong>50/80</strong></td><td>+1.16%</td><td>1.01×</td><td>+11.18%</td><td>ABOVE</td></tr><tr class=""><td>Endúr ASA</td><td>ENDUR.OL</td>
+<td>Oslo Børs</td><td>120.00</td><td>110.94</td><td>107.92</td>
+<td data-order="2.79">+2.79%</td><td data-order="50"><strong>50/80</strong></td><td>+2.45%</td><td>2.29×</td><td>+1.08%</td><td>ABOVE</td></tr><tr class=""><td>poLight ASA</td><td>PLT.OL</td>
+<td>Oslo Børs</td><td>14.40</td><td>13.27</td><td>8.88</td>
+<td data-order="49.452">+49.45%</td><td data-order="45"><strong>45/80</strong></td><td>+8.48%</td><td>0.75×</td><td>+11.58%</td><td>ABOVE</td></tr><tr class=""><td>Höegh Autoliners ASA</td><td>HAUTO.OL</td>
+<td>Oslo Børs</td><td>184.60</td><td>178.92</td><td>140.58</td>
+<td data-order="27.273">+27.27%</td><td data-order="45"><strong>45/80</strong></td><td>+7.61%</td><td>0.84×</td><td>+11.25%</td><td>ABOVE</td></tr><tr class=""><td>BW LPG Limited</td><td>BWLPG.OL</td>
+<td>Oslo Børs</td><td>252.40</td><td>223.58</td><td>179.43</td>
+<td data-order="24.605">+24.61%</td><td data-order="45"><strong>45/80</strong></td><td>+7.24%</td><td>0.80×</td><td>+22.69%</td><td>ABOVE</td></tr><tr class=""><td>Moreld ASA</td><td>MORLD.OL</td>
+<td>Oslo Børs</td><td>23.60</td><td>23.29</td><td>18.92</td>
+<td data-order="23.095">+23.09%</td><td data-order="45"><strong>45/80</strong></td><td>+3.85%</td><td>0.84×</td><td>+10.74%</td><td>ABOVE</td></tr><tr class=""><td>AutoStore Holdings Ltd.</td><td>AUTO.OL</td>
+<td>Oslo Børs</td><td>15.89</td><td>15.40</td><td>12.54</td>
+<td data-order="22.799">+22.80%</td><td data-order="45"><strong>45/80</strong></td><td>+4.04%</td><td>0.78×</td><td>+37.46%</td><td>ABOVE</td></tr><tr class=""><td>BlueNord ASA</td><td>BNOR.OL</td>
+<td>Oslo Børs</td><td>586.00</td><td>557.72</td><td>458.55</td>
+<td data-order="21.626">+21.63%</td><td data-order="45"><strong>45/80</strong></td><td>+5.89%</td><td>0.71×</td><td>+18.08%</td><td>ABOVE</td></tr><tr class=""><td>Vår Energi ASA</td><td>VAR.OL</td>
+<td>Oslo Børs</td><td>53.20</td><td>50.17</td><td>42.17</td>
+<td data-order="18.983">+18.98%</td><td data-order="45"><strong>45/80</strong></td><td>+5.82%</td><td>0.78×</td><td>+19.09%</td><td>ABOVE</td></tr><tr class=""><td>OKEA ASA</td><td>OKEA.OL</td>
+<td>Oslo Børs</td><td>42.65</td><td>38.76</td><td>34.01</td>
+<td data-order="13.965">+13.96%</td><td data-order="45"><strong>45/80</strong></td><td>+5.97%</td><td>0.94×</td><td>+27.97%</td><td>ABOVE</td></tr><tr class=""><td>Aker BP ASA</td><td>AKRBP.OL</td>
+<td>Oslo Børs</td><td>353.70</td><td>349.70</td><td>314.90</td>
+<td data-order="11.05">+11.05%</td><td data-order="45"><strong>45/80</strong></td><td>+3.91%</td><td>1.19×</td><td>+5.90%</td><td>ABOVE</td></tr><tr class=""><td>Napatech A/S</td><td>NAPA.OL</td>
+<td>Oslo Børs</td><td>47.00</td><td>42.78</td><td>39.04</td>
+<td data-order="9.568">+9.57%</td><td data-order="45"><strong>45/80</strong></td><td>+3.81%</td><td>0.90×</td><td>+14.29%</td><td>ABOVE</td></tr><tr class=""><td>Paratus Energy Services Ltd.</td><td>PLSV.OL</td>
+<td>Oslo Børs</td><td>48.25</td><td>47.89</td><td>44.35</td>
+<td data-order="7.983">+7.98%</td><td data-order="45"><strong>45/80</strong></td><td>+2.20%</td><td>1.32×</td><td>+3.92%</td><td>ABOVE</td></tr><tr class=""><td>ININ GROUP AS</td><td>ININ.OL</td>
+<td>Growth/Oslo candidate</td><td>3.70</td><td>3.34</td><td>3.10</td>
+<td data-order="7.629">+7.63%</td><td data-order="45"><strong>45/80</strong></td><td>+1.57%</td><td>0.65×</td><td>+23.16%</td><td>ABOVE</td></tr><tr class=""><td>Panoro Energy ASA</td><td>PEN.OL</td>
+<td>Oslo Børs</td><td>30.50</td><td>29.46</td><td>27.54</td>
+<td data-order="6.966">+6.97%</td><td data-order="45"><strong>45/80</strong></td><td>+4.44%</td><td>0.88×</td><td>+11.66%</td><td>ABOVE</td></tr><tr class=""><td>Stolt-Nielsen Limited</td><td>SNI.OL</td>
+<td>Oslo Børs</td><td>356.50</td><td>338.15</td><td>320.09</td>
+<td data-order="5.642">+5.64%</td><td data-order="45"><strong>45/80</strong></td><td>+0.74%</td><td>1.72×</td><td>+4.05%</td><td>ABOVE</td></tr><tr class=""><td>Pioneer Property Group ASA</td><td>PPG.OL</td>
+<td>Euronext Expand Oslo</td><td>106.50</td><td>105.18</td><td>100.49</td>
+<td data-order="4.671">+4.67%</td><td data-order="45"><strong>45/80</strong></td><td>+1.31%</td><td>2.48×</td><td>-1.97%</td><td>ABOVE</td></tr><tr class=""><td>Integrated Wind Solutions ASA</td><td>IWS.OL</td>
+<td>Oslo Børs</td><td>61.20</td><td>56.73</td><td>55.39</td>
+<td data-order="2.429">+2.43%</td><td data-order="45"><strong>45/80</strong></td><td>+3.22%</td><td>1.35×</td><td>+3.14%</td><td>ABOVE</td></tr><tr class=""><td>ENERGEIA AS</td><td>ENERG.OL</td>
+<td>Growth/Oslo candidate</td><td>8.00</td><td>7.74</td><td>7.57</td>
+<td data-order="2.354">+2.35%</td><td data-order="45"><strong>45/80</strong></td><td>+0.18%</td><td>6.21×</td><td>+1.36%</td><td>ABOVE</td></tr><tr class=""><td>BRUTON LIMITED</td><td>BRUT.OL</td>
+<td>Growth/Oslo candidate</td><td>57.00</td><td>52.34</td><td>52.19</td>
+<td data-order="0.289">+0.29%</td><td data-order="45"><strong>45/80</strong></td><td>+1.14%</td><td>1.45×</td><td>+0.30%</td><td>ABOVE / CLOSE</td></tr><tr class=""><td>Norske Skog</td><td>NSKOG.OL</td>
+<td>Oslo Børs</td><td>43.90</td><td>46.88</td><td>37.26</td>
+<td data-order="25.823">+25.82%</td><td data-order="43"><strong>43/80</strong></td><td>+8.86%</td><td>1.10×</td><td>+27.72%</td><td>ABOVE</td></tr><tr class=""><td>Himalaya Shipping Ltd</td><td>HSHP.OL</td>
+<td>Oslo Børs</td><td>173.00</td><td>161.72</td><td>134.42</td>
+<td data-order="20.307">+20.31%</td><td data-order="40"><strong>40/80</strong></td><td>+6.31%</td><td>0.94×</td><td>+9.31%</td><td>ABOVE</td></tr><tr class=""><td>Klaveness Combination Carriers ASA</td><td>KCC.OL</td>
+<td>Oslo Børs</td><td>105.40</td><td>100.71</td><td>90.99</td>
+<td data-order="10.688">+10.69%</td><td data-order="40"><strong>40/80</strong></td><td>+3.12%</td><td>0.59×</td><td>+6.80%</td><td>ABOVE</td></tr><tr class=""><td>DOF Group ASA</td><td>DOFG.OL</td>
+<td>Oslo Børs</td><td>130.60</td><td>129.55</td><td>119.16</td>
+<td data-order="8.718">+8.72%</td><td data-order="40"><strong>40/80</strong></td><td>+3.88%</td><td>1.19×</td><td>+2.89%</td><td>ABOVE</td></tr><tr class=""><td>Jinhui Shipping and Transportation Limit</td><td>JIN.OL</td>
+<td>Oslo Børs</td><td>6.82</td><td>6.63</td><td>6.10</td>
+<td data-order="8.6">+8.60%</td><td data-order="40"><strong>40/80</strong></td><td>+1.41%</td><td>0.62×</td><td>+5.05%</td><td>ABOVE</td></tr><tr class=""><td>PetroNor E&amp;P ASA</td><td>PNOR.OL</td>
+<td>Oslo Børs</td><td>12.08</td><td>11.60</td><td>10.70</td>
+<td data-order="8.395">+8.39%</td><td data-order="40"><strong>40/80</strong></td><td>+3.71%</td><td>0.85×</td><td>+9.30%</td><td>ABOVE</td></tr><tr class=""><td>Smartoptics Group ASA</td><td>SMOP.OL</td>
+<td>Oslo Børs</td><td>51.20</td><td>47.28</td><td>44.00</td>
+<td data-order="7.447">+7.45%</td><td data-order="40"><strong>40/80</strong></td><td>+5.18%</td><td>0.86×</td><td>+6.00%</td><td>ABOVE</td></tr><tr class=""><td>Nekkar ASA</td><td>NKR.OL</td>
+<td>Oslo Børs</td><td>16.45</td><td>14.60</td><td>14.06</td>
+<td data-order="3.834">+3.83%</td><td data-order="40"><strong>40/80</strong></td><td>+2.11%</td><td>0.91×</td><td>+8.14%</td><td>ABOVE</td></tr><tr class=""><td>Otello Corporation ASA</td><td>OTEC.OL</td>
+<td>Oslo Børs</td><td>21.15</td><td>18.22</td><td>17.97</td>
+<td data-order="1.358">+1.36%</td><td data-order="40"><strong>40/80</strong></td><td>+0.46%</td><td>0.81×</td><td>+18.81%</td><td>ABOVE / CLOSE</td></tr><tr class="near"><td>Kitron ASA</td><td>KIT.OL</td>
+<td>Oslo Børs</td><td>103.90</td><td>94.62</td><td>95.68</td>
+<td data-order="-1.112">-1.11%</td><td data-order="40"><strong>40/80</strong></td><td>+4.02%</td><td>1.27×</td><td>+13.30%</td><td>APPROACHING</td></tr><tr class=""><td>Oncoinvent ASA</td><td>ONCIN.OL</td>
+<td>Oslo Børs</td><td>70.00</td><td>93.25</td><td>60.72</td>
+<td data-order="53.578">+53.58%</td><td data-order="38"><strong>38/80</strong></td><td>+7.40%</td><td>9.44×</td><td>-17.81%</td><td>ABOVE</td></tr><tr class=""><td>Tekna Holding ASA</td><td>TEKNA.OL</td>
+<td>Oslo Børs</td><td>6.00</td><td>6.10</td><td>4.40</td>
+<td data-order="38.848">+38.85%</td><td data-order="38"><strong>38/80</strong></td><td>+7.25%</td><td>0.39×</td><td>+50.54%</td><td>ABOVE</td></tr><tr class=""><td>Hexagon Composites ASA</td><td>HEX.OL</td>
+<td>Oslo Børs</td><td>12.73</td><td>13.09</td><td>10.10</td>
+<td data-order="29.592">+29.59%</td><td data-order="38"><strong>38/80</strong></td><td>+5.65%</td><td>0.51×</td><td>+25.93%</td><td>ABOVE</td></tr><tr class=""><td>Aker ASA</td><td>AKER.OL</td>
+<td>Oslo Børs</td><td>1360.00</td><td>1471.08</td><td>1148.24</td>
+<td data-order="28.116">+28.12%</td><td data-order="38"><strong>38/80</strong></td><td>+6.69%</td><td>1.44×</td><td>+1.61%</td><td>ABOVE</td></tr><tr class=""><td>Nykode Therapeutics ASA</td><td>NYKD.OL</td>
+<td>Oslo Børs</td><td>3.44</td><td>3.84</td><td>3.26</td>
+<td data-order="17.671">+17.67%</td><td data-order="38"><strong>38/80</strong></td><td>+4.49%</td><td>0.58×</td><td>+17.11%</td><td>ABOVE</td></tr><tr class=""><td>Aker BioMarine ASA</td><td>AKBM.OL</td>
+<td>Oslo Børs</td><td>122.00</td><td>123.00</td><td>106.52</td>
+<td data-order="15.471">+15.47%</td><td data-order="38"><strong>38/80</strong></td><td>+3.96%</td><td>0.03×</td><td>+17.60%</td><td>ABOVE</td></tr><tr class=""><td>B2 Impact ASA</td><td>B2I.OL</td>
+<td>Oslo Børs</td><td>23.05</td><td>25.34</td><td>22.50</td>
+<td data-order="12.628">+12.63%</td><td data-order="38"><strong>38/80</strong></td><td>+3.99%</td><td>6.25×</td><td>-11.03%</td><td>ABOVE</td></tr><tr class=""><td>SpareBank 1 Sør-Norge ASA</td><td>SB1NO.OL</td>
+<td>Oslo Børs</td><td>219.00</td><td>221.93</td><td>200.92</td>
+<td data-order="10.458">+10.46%</td><td data-order="38"><strong>38/80</strong></td><td>+2.69%</td><td>1.36×</td><td>+2.84%</td><td>ABOVE</td></tr><tr class=""><td>Arendals Fossekompani ASA</td><td>AFK.OL</td>
+<td>Oslo Børs</td><td>177.50</td><td>185.01</td><td>171.87</td>
+<td data-order="7.648">+7.65%</td><td data-order="38"><strong>38/80</strong></td><td>+3.20%</td><td>2.29×</td><td>-5.03%</td><td>ABOVE</td></tr><tr class=""><td>Solstad Offshore ASA</td><td>SOFF.OL</td>
+<td>Oslo Børs</td><td>72.30</td><td>69.80</td><td>60.35</td>
+<td data-order="15.659">+15.66%</td><td data-order="35"><strong>35/80</strong></td><td>+5.32%</td><td>0.90×</td><td>+4.00%</td><td>ABOVE</td></tr><tr class=""><td>Solstad Maritime ASA</td><td>SOMA.OL</td>
+<td>Oslo Børs</td><td>28.75</td><td>28.64</td><td>25.24</td>
+<td data-order="13.474">+13.47%</td><td data-order="35"><strong>35/80</strong></td><td>+4.92%</td><td>0.83×</td><td>+1.72%</td><td>ABOVE</td></tr><tr class=""><td>Subsea 7 SA</td><td>SUBC.OL</td>
+<td>Oslo Børs</td><td>338.60</td><td>329.89</td><td>293.16</td>
+<td data-order="12.528">+12.53%</td><td data-order="35"><strong>35/80</strong></td><td>+4.87%</td><td>1.13×</td><td>-1.95%</td><td>ABOVE</td></tr><tr class=""><td>Eidesvik Offshore ASA</td><td>EIOF.OL</td>
+<td>Oslo Børs</td><td>17.20</td><td>17.08</td><td>15.43</td>
+<td data-order="10.701">+10.70%</td><td data-order="35"><strong>35/80</strong></td><td>+3.29%</td><td>0.44×</td><td>+2.53%</td><td>ABOVE</td></tr><tr class=""><td>Akastor ASA</td><td>AKAST.OL</td>
+<td>Oslo Børs</td><td>13.70</td><td>13.15</td><td>12.40</td>
+<td data-order="6.041">+6.04%</td><td data-order="35"><strong>35/80</strong></td><td>+3.06%</td><td>0.83×</td><td>+4.74%</td><td>ABOVE</td></tr><tr class=""><td>Pexip Holding ASA</td><td>PEXIP.OL</td>
+<td>Oslo Børs</td><td>76.90</td><td>76.36</td><td>72.10</td>
+<td data-order="5.915">+5.92%</td><td data-order="35"><strong>35/80</strong></td><td>+1.62%</td><td>1.17×</td><td>-12.88%</td><td>ABOVE</td></tr><tr class=""><td>Zalaris ASA</td><td>ZAL.OL</td>
+<td>Oslo Børs</td><td>104.50</td><td>100.44</td><td>95.17</td>
+<td data-order="5.533">+5.53%</td><td data-order="35"><strong>35/80</strong></td><td>+1.33%</td><td>0.70×</td><td>+3.55%</td><td>ABOVE</td></tr><tr class=""><td>Nordic Semiconductor ASA</td><td>NOD.OL</td>
+<td>Oslo Børs</td><td>176.20</td><td>172.58</td><td>165.57</td>
+<td data-order="4.236">+4.24%</td><td data-order="35"><strong>35/80</strong></td><td>+3.10%</td><td>0.86×</td><td>+2.00%</td><td>ABOVE</td></tr><tr class=""><td>BALTIC SEA PROPERTIES</td><td>BALT.OL</td>
+<td>Growth/Oslo candidate</td><td>49.20</td><td>47.44</td><td>46.79</td>
+<td data-order="1.386">+1.39%</td><td data-order="35"><strong>35/80</strong></td><td>-0.33%</td><td>2.18×</td><td>+1.65%</td><td>ABOVE / CLOSE</td></tr><tr class=""><td>SalMar ASA</td><td>SALM.OL</td>
+<td>Oslo Børs</td><td>551.00</td><td>549.40</td><td>544.41</td>
+<td data-order="0.917">+0.92%</td><td data-order="35"><strong>35/80</strong></td><td>-0.42%</td><td>1.04×</td><td>+10.50%</td><td>ABOVE / CLOSE</td></tr><tr class=""><td>INIFY LABORATORIES AB</td><td>INIFY.OL</td>
+<td>Growth/Oslo candidate</td><td>6.15</td><td>6.75</td><td>5.41</td>
+<td data-order="24.778">+24.78%</td><td data-order="33"><strong>33/80</strong></td><td>+4.11%</td><td>1.35×</td><td>-27.01%</td><td>ABOVE</td></tr><tr class=""><td>INSTABANK</td><td>INSTA.OL</td>
+<td>Growth/Oslo candidate</td><td>4.90</td><td>4.96</td><td>4.28</td>
+<td data-order="15.903">+15.90%</td><td data-order="33"><strong>33/80</strong></td><td>+3.97%</td><td>0.37×</td><td>+5.55%</td><td>ABOVE</td></tr><tr class=""><td>CAMBI ASA</td><td>CAMBI.OL</td>
+<td>Growth/Oslo candidate</td><td>22.60</td><td>22.92</td><td>20.21</td>
+<td data-order="13.44">+13.44%</td><td data-order="33"><strong>33/80</strong></td><td>+3.89%</td><td>0.96×</td><td>+5.48%</td><td>ABOVE</td></tr><tr class=""><td>HAV GROUP ASA</td><td>HAV.OL</td>
+<td>Growth/Oslo candidate</td><td>11.90</td><td>13.09</td><td>11.69</td>
+<td data-order="11.951">+11.95%</td><td data-order="33"><strong>33/80</strong></td><td>+5.82%</td><td>1.48×</td><td>-17.16%</td><td>ABOVE</td></tr><tr class=""><td>Veidekke ASA</td><td>VEI.OL</td>
+<td>Oslo Børs</td><td>201.00</td><td>205.31</td><td>185.09</td>
+<td data-order="10.924">+10.92%</td><td data-order="33"><strong>33/80</strong></td><td>+2.92%</td><td>1.16×</td><td>+2.06%</td><td>ABOVE</td></tr><tr class=""><td>Storebrand ASA</td><td>STB.OL</td>
+<td>Oslo Børs</td><td>187.90</td><td>200.20</td><td>181.30</td>
+<td data-order="10.426">+10.43%</td><td data-order="33"><strong>33/80</strong></td><td>+2.16%</td><td>1.33×</td><td>-5.68%</td><td>ABOVE</td></tr><tr class=""><td>Elkem ASA</td><td>ELK.OL</td>
+<td>Oslo Børs</td><td>33.68</td><td>34.01</td><td>30.99</td>
+<td data-order="9.726">+9.73%</td><td data-order="33"><strong>33/80</strong></td><td>+2.11%</td><td>1.34×</td><td>-3.25%</td><td>ABOVE</td></tr><tr class=""><td>AF Gruppen ASA</td><td>AFG.OL</td>
+<td>Oslo Børs</td><td>186.00</td><td>191.39</td><td>182.83</td>
+<td data-order="4.681">+4.68%</td><td data-order="33"><strong>33/80</strong></td><td>+0.98%</td><td>1.94×</td><td>-9.83%</td><td>ABOVE</td></tr><tr class=""><td>SATS ASA</td><td>SATS.OL</td>
+<td>Oslo Børs</td><td>41.55</td><td>43.15</td><td>41.42</td>
+<td data-order="4.182">+4.18%</td><td data-order="33"><strong>33/80</strong></td><td>+1.04%</td><td>1.22×</td><td>-1.63%</td><td>ABOVE</td></tr><tr class=""><td>BERGEN CARBON SOLUTIONS AS</td><td>BCS.OL</td>
+<td>Growth/Oslo candidate</td><td>6.38</td><td>6.20</td><td>4.82</td>
+<td data-order="28.698">+28.70%</td><td data-order="30"><strong>30/80</strong></td><td>+5.16%</td><td>0.35×</td><td>-20.24%</td><td>ABOVE</td></tr><tr class=""><td>Elmera Group ASA</td><td>ELMRA.OL</td>
+<td>Oslo Børs</td><td>46.85</td><td>46.16</td><td>37.93</td>
+<td data-order="21.699">+21.70%</td><td data-order="30"><strong>30/80</strong></td><td>+3.39%</td><td>0.24×</td><td>-3.13%</td><td>ABOVE</td></tr><tr class=""><td>SPAREBANK 1 HELGELAND</td><td>HELG.OL</td>
+<td>Growth/Oslo candidate</td><td>169.00</td><td>168.00</td><td>163.70</td>
+<td data-order="2.629">+2.63%</td><td data-order="30"><strong>30/80</strong></td><td>+0.30%</td><td>0.04×</td><td>+3.72%</td><td>ABOVE</td></tr><tr class=""><td>Gyldendal ASA</td><td>GYL.OL</td>
+<td>Oslo Børs</td><td>430.00</td><td>439.12</td><td>435.94</td>
+<td data-order="0.729">+0.73%</td><td data-order="30"><strong>30/80</strong></td><td>+0.10%</td><td>2.09×</td><td>+2.64%</td><td>ABOVE / CLOSE</td></tr><tr class=""><td>Borgestad ASA</td><td>BOR.OL</td>
+<td>Oslo Børs</td><td>17.15</td><td>17.00</td><td>16.90</td>
+<td data-order="0.63">+0.63%</td><td data-order="30"><strong>30/80</strong></td><td>+0.06%</td><td>1.18×</td><td>-1.68%</td><td>ABOVE / CLOSE</td></tr><tr class=""><td>North Energy ASA</td><td>NORTH.OL</td>
+<td>Euronext Expand Oslo</td><td>2.57</td><td>2.48</td><td>2.47</td>
+<td data-order="0.5">+0.50%</td><td data-order="30"><strong>30/80</strong></td><td>+0.84%</td><td>0.95×</td><td>+2.68%</td><td>ABOVE / CLOSE</td></tr><tr class=""><td>KID ASA</td><td>KID.OL</td>
+<td>Oslo Børs</td><td>130.60</td><td>124.25</td><td>123.72</td>
+<td data-order="0.429">+0.43%</td><td data-order="30"><strong>30/80</strong></td><td>-0.85%</td><td>2.20×</td><td>-2.15%</td><td>ABOVE / CLOSE</td></tr><tr class=""><td>Interoil Exploration and Production ASA</td><td>IOX.OL</td>
+<td>Oslo Børs</td><td>2.54</td><td>2.70</td><td>2.71</td>
+<td data-order="-0.144">-0.14%</td><td data-order="30"><strong>30/80</strong></td><td>+6.58%</td><td>2.26×</td><td>-17.72%</td><td>NEW DEATH CROSS</td></tr><tr class="near"><td>HUDDLESTOCK FINTECH</td><td>HUDL.OL</td>
+<td>Growth/Oslo candidate</td><td>0.65</td><td>0.57</td><td>0.57</td>
+<td data-order="-1.44">-1.44%</td><td data-order="30"><strong>30/80</strong></td><td>-1.09%</td><td>1.94×</td><td>+15.06%</td><td>APPROACHING</td></tr><tr class=""><td>Lifecare ASA</td><td>LIFE.OL</td>
+<td>Oslo Børs</td><td>0.41</td><td>0.33</td><td>0.46</td>
+<td data-order="-28.297">-28.30%</td><td data-order="30"><strong>30/80</strong></td><td>-49.32%</td><td>10.91×</td><td>+40.76%</td><td>BELOW</td></tr><tr class=""><td>2020 Bulkers Ltd.</td><td>2020.OL</td>
+<td>Oslo Børs</td><td>6.28</td><td>5.03</td><td>54.50</td>
+<td data-order="-90.778">-90.78%</td><td data-order="30"><strong>30/80</strong></td><td>-18.12%</td><td>6.38×</td><td>+97.11%</td><td>BELOW</td></tr><tr class=""><td>Prosafe SE</td><td>PRS.OL</td>
+<td>Oslo Børs</td><td>4.77</td><td>5.31</td><td>4.20</td>
+<td data-order="26.405">+26.41%</td><td data-order="28"><strong>28/80</strong></td><td>+3.21%</td><td>0.82×</td><td>+1.88%</td><td>ABOVE</td></tr><tr class=""><td>BEWi ASA</td><td>BEWI.OL</td>
+<td>Oslo Børs</td><td>19.30</td><td>20.29</td><td>17.61</td>
+<td data-order="15.201">+15.20%</td><td data-order="28"><strong>28/80</strong></td><td>+1.96%</td><td>0.90×</td><td>+3.86%</td><td>ABOVE</td></tr><tr class=""><td>Aker Solutions ASA</td><td>AKSO.OL</td>
+<td>Oslo Børs</td><td>41.26</td><td>42.04</td><td>38.48</td>
+<td data-order="9.256">+9.26%</td><td data-order="28"><strong>28/80</strong></td><td>+4.41%</td><td>1.07×</td><td>-13.94%</td><td>ABOVE</td></tr><tr class=""><td>TGS ASA</td><td>TGS.OL</td>
+<td>Oslo Børs</td><td>135.00</td><td>137.58</td><td>126.02</td>
+<td data-order="9.177">+9.18%</td><td data-order="28"><strong>28/80</strong></td><td>+4.55%</td><td>1.05×</td><td>-3.35%</td><td>ABOVE</td></tr><tr class=""><td>DNB Bank ASA</td><td>DNB.OL</td>
+<td>Oslo Børs</td><td>302.40</td><td>313.52</td><td>289.67</td>
+<td data-order="8.232">+8.23%</td><td data-order="28"><strong>28/80</strong></td><td>+2.04%</td><td>1.09×</td><td>-3.15%</td><td>ABOVE</td></tr><tr class=""><td>Constellation Oil Services Holding S.A.</td><td>COSH.OL</td>
+<td>Oslo Børs</td><td>128.00</td><td>135.83</td><td>129.77</td>
+<td data-order="4.668">+4.67%</td><td data-order="25"><strong>25/80</strong></td><td>+2.13%</td><td>1.42×</td><td>-8.57%</td><td>ABOVE</td></tr><tr class=""><td>AURSKOG SPAREBANK</td><td>AURG.OL</td>
+<td>Growth/Oslo candidate</td><td>263.10</td><td>257.17</td><td>252.82</td>
+<td data-order="1.721">+1.72%</td><td data-order="25"><strong>25/80</strong></td><td>+0.93%</td><td>0.27×</td><td>-1.11%</td><td>ABOVE / CLOSE</td></tr><tr class=""><td>Saga Pure ASA</td><td>SAGA.OL</td>
+<td>Oslo Børs</td><td>1.58</td><td>1.55</td><td>1.53</td>
+<td data-order="1.487">+1.49%</td><td data-order="25"><strong>25/80</strong></td><td>+0.94%</td><td>0.33×</td><td>-6.87%</td><td>ABOVE / CLOSE</td></tr><tr class=""><td>AASEN SPAREBANK</td><td>AASB.OL</td>
+<td>Growth/Oslo candidate</td><td>141.00</td><td>135.30</td><td>133.70</td>
+<td data-order="1.194">+1.19%</td><td data-order="25"><strong>25/80</strong></td><td>+0.23%</td><td>0.43×</td><td>-0.10%</td><td>ABOVE / CLOSE</td></tr><tr class=""><td>HAUGESUND SPAREBANK</td><td>HGSB.OL</td>
+<td>Growth/Oslo candidate</td><td>155.50</td><td>158.81</td><td>157.77</td>
+<td data-order="0.658">+0.66%</td><td data-order="25"><strong>25/80</strong></td><td>+0.42%</td><td>10.91×</td><td>-5.63%</td><td>ABOVE / CLOSE</td></tr><tr class=""><td>GRONG SPAREBANK</td><td>GRONG.OL</td>
+<td>Growth/Oslo candidate</td><td>169.10</td><td>184.37</td><td>183.39</td>
+<td data-order="0.53">+0.53%</td><td data-order="25"><strong>25/80</strong></td><td>+0.87%</td><td>16.33×</td><td>-18.41%</td><td>ABOVE / CLOSE</td></tr><tr class=""><td>Havila Shipping ASA</td><td>HAVI.OL</td>
+<td>Oslo Børs</td><td>1.12</td><td>1.12</td><td>1.11</td>
+<td data-order="0.336">+0.34%</td><td data-order="25"><strong>25/80</strong></td><td>+0.13%</td><td>0.90×</td><td>-7.92%</td><td>ABOVE / CLOSE</td></tr><tr class="near"><td>Observe Medical ASA</td><td>OBSRV.OL</td>
+<td>Euronext Expand Oslo</td><td>0.95</td><td>0.96</td><td>0.97</td>
+<td data-order="-1.043">-1.04%</td><td data-order="25"><strong>25/80</strong></td><td>+2.92%</td><td>1.39×</td><td>-14.83%</td><td>APPROACHING</td></tr><tr class="near"><td>Reach Subsea ASA</td><td>REACH.OL</td>
+<td>Oslo Børs</td><td>6.18</td><td>6.12</td><td>6.21</td>
+<td data-order="-1.374">-1.37%</td><td data-order="25"><strong>25/80</strong></td><td>+0.34%</td><td>0.93×</td><td>+20.69%</td><td>APPROACHING</td></tr><tr class="near"><td>Cadeler A/S</td><td>CADLR.OL</td>
+<td>Oslo Børs</td><td>52.00</td><td>56.47</td><td>57.32</td>
+<td data-order="-1.492">-1.49%</td><td data-order="25"><strong>25/80</strong></td><td>+1.89%</td><td>1.29×</td><td>-13.60%</td><td>APPROACHING</td></tr><tr class=""><td>Kongsberg Gruppen ASA</td><td>KOG.OL</td>
+<td>Oslo Børs</td><td>295.40</td><td>312.62</td><td>324.44</td>
+<td data-order="-3.643">-3.64%</td><td data-order="25"><strong>25/80</strong></td><td>+2.22%</td><td>1.02×</td><td>+0.46%</td><td>BELOW</td></tr><tr class=""><td>Magnora ASA</td><td>MGN.OL</td>
+<td>Oslo Børs</td><td>21.90</td><td>22.15</td><td>23.44</td>
+<td data-order="-5.511">-5.51%</td><td data-order="25"><strong>25/80</strong></td><td>+0.85%</td><td>1.58×</td><td>-10.50%</td><td>BELOW</td></tr><tr class=""><td>IDEX Biometrics ASA</td><td>IDEX.OL</td>
+<td>Oslo Børs</td><td>7.70</td><td>6.83</td><td>7.65</td>
+<td data-order="-10.695">-10.70%</td><td data-order="25"><strong>25/80</strong></td><td>+3.18%</td><td>1.29×</td><td>-9.06%</td><td>BELOW</td></tr><tr class=""><td>Sentia ASA</td><td>SNTIA.OL</td>
+<td>Oslo Børs</td><td>81.00</td><td>82.97</td><td>73.01</td>
+<td data-order="13.645">+13.64%</td><td data-order="23"><strong>23/80</strong></td><td>+3.94%</td><td>0.99×</td><td>-3.80%</td><td>ABOVE</td></tr><tr class=""><td>Petrolia SE</td><td>PSE.OL</td>
+<td>Oslo Børs</td><td>6.10</td><td>6.26</td><td>5.64</td>
+<td data-order="11.137">+11.14%</td><td data-order="23"><strong>23/80</strong></td><td>+3.25%</td><td>0.68×</td><td>-1.92%</td><td>ABOVE</td></tr><tr class=""><td>Zelluna ASA</td><td>ZLNA.OL</td>
+<td>Oslo Børs</td><td>19.65</td><td>21.70</td><td>19.64</td>
+<td data-order="10.526">+10.53%</td><td data-order="23"><strong>23/80</strong></td><td>+5.55%</td><td>0.29×</td><td>-15.99%</td><td>ABOVE</td></tr><tr class=""><td>Atea ASA</td><td>ATEA.OL</td>
+<td>Oslo Børs</td><td>164.00</td><td>170.52</td><td>157.07</td>
+<td data-order="8.562">+8.56%</td><td data-order="23"><strong>23/80</strong></td><td>+1.14%</td><td>0.83×</td><td>-5.31%</td><td>ABOVE</td></tr><tr class=""><td>SoftwareOne Holding AG</td><td>SWON.OL</td>
+<td>Oslo Børs</td><td>103.80</td><td>104.25</td><td>96.15</td>
+<td data-order="8.425">+8.43%</td><td data-order="23"><strong>23/80</strong></td><td>-0.81%</td><td>1.27×</td><td>+1.04%</td><td>ABOVE</td></tr><tr class=""><td>Polaris Media ASA</td><td>POL.OL</td>
+<td>Oslo Børs</td><td>60.00</td><td>60.52</td><td>57.34</td>
+<td data-order="5.531">+5.53%</td><td data-order="23"><strong>23/80</strong></td><td>+2.19%</td><td>0.44×</td><td>-2.21%</td><td>ABOVE</td></tr><tr class=""><td>Fjord Defence Group ASA</td><td>DFENS.OL</td>
+<td>Oslo Børs</td><td>13.10</td><td>14.84</td><td>15.19</td>
+<td data-order="-2.304">-2.30%</td><td data-order="20"><strong>20/80</strong></td><td>+0.61%</td><td>1.24×</td><td>-17.68%</td><td>BELOW</td></tr><tr class=""><td>Austevoll Seafood ASA</td><td>AUSS.OL</td>
+<td>Oslo Børs</td><td>81.70</td><td>84.94</td><td>87.00</td>
+<td data-order="-2.36">-2.36%</td><td data-order="20"><strong>20/80</strong></td><td>+0.02%</td><td>1.24×</td><td>-5.92%</td><td>BELOW</td></tr><tr class=""><td>Odfjell Technology Ltd</td><td>OTL.OL</td>
+<td>Oslo Børs</td><td>60.80</td><td>60.06</td><td>61.52</td>
+<td data-order="-2.361">-2.36%</td><td data-order="20"><strong>20/80</strong></td><td>+1.22%</td><td>0.77×</td><td>+1.92%</td><td>BELOW</td></tr><tr class=""><td>Archer Limited</td><td>ARCH.OL</td>
+<td>Oslo Børs</td><td>22.00</td><td>23.32</td><td>23.91</td>
+<td data-order="-2.465">-2.46%</td><td data-order="20"><strong>20/80</strong></td><td>+0.55%</td><td>1.38×</td><td>-11.31%</td><td>BELOW</td></tr><tr class=""><td>GREEN MINERALS AS</td><td>GEM.OL</td>
+<td>Growth/Oslo candidate</td><td>1.19</td><td>1.28</td><td>1.32</td>
+<td data-order="-3.009">-3.01%</td><td data-order="20"><strong>20/80</strong></td><td>-3.22%</td><td>1.56×</td><td>+0.94%</td><td>BELOW</td></tr><tr class=""><td>BW Offshore Limited</td><td>BWO.OL</td>
+<td>Oslo Børs</td><td>41.15</td><td>41.45</td><td>46.23</td>
+<td data-order="-10.33">-10.33%</td><td data-order="20"><strong>20/80</strong></td><td>+0.57%</td><td>1.20×</td><td>-14.02%</td><td>BELOW</td></tr><tr class=""><td>RomReal Ltd.</td><td>ROM.OL</td>
+<td>Euronext Expand Oslo</td><td>2.70</td><td>2.77</td><td>2.71</td>
+<td data-order="2.272">+2.27%</td><td data-order="15"><strong>15/80</strong></td><td>+1.08%</td><td>0.92×</td><td>-2.59%</td><td>ABOVE</td></tr><tr class=""><td>Soiltech ASA</td><td>STECH.OL</td>
+<td>Oslo Børs</td><td>81.00</td><td>85.32</td><td>83.67</td>
+<td data-order="1.964">+1.96%</td><td data-order="15"><strong>15/80</strong></td><td>+1.74%</td><td>0.62×</td><td>-14.70%</td><td>ABOVE / CLOSE</td></tr><tr class=""><td>KRAFT BANK ASA</td><td>KRAB.OL</td>
+<td>Growth/Oslo candidate</td><td>12.40</td><td>13.01</td><td>12.82</td>
+<td data-order="1.489">+1.49%</td><td data-order="15"><strong>15/80</strong></td><td>+1.91%</td><td>0.82×</td><td>-9.69%</td><td>ABOVE / CLOSE</td></tr><tr class=""><td>5th Planet Games A/S</td><td>5PG.OL</td>
+<td>Euronext Expand Oslo</td><td>1.08</td><td>1.36</td><td>1.34</td>
+<td data-order="1.099">+1.10%</td><td data-order="15"><strong>15/80</strong></td><td>+3.80%</td><td>0.70×</td><td>-25.90%</td><td>ABOVE / CLOSE</td></tr><tr class=""><td>Cloudberry Clean Energy ASA</td><td>CLOUD.OL</td>
+<td>Oslo Børs</td><td>11.54</td><td>12.74</td><td>12.62</td>
+<td data-order="0.971">+0.97%</td><td data-order="15"><strong>15/80</strong></td><td>-0.61%</td><td>3.78×</td><td>-15.15%</td><td>ABOVE / CLOSE</td></tr><tr class="near"><td>ABG Sundal Collier Holding ASA</td><td>ABG.OL</td>
+<td>Oslo Børs</td><td>7.24</td><td>7.34</td><td>7.35</td>
+<td data-order="-0.12">-0.12%</td><td data-order="15"><strong>15/80</strong></td><td>-0.27%</td><td>2.58×</td><td>-3.76%</td><td>APPROACHING</td></tr><tr class="near"><td>Scana ASA</td><td>SCANA.OL</td>
+<td>Oslo Børs</td><td>1.42</td><td>1.44</td><td>1.45</td>
+<td data-order="-0.679">-0.68%</td><td data-order="15"><strong>15/80</strong></td><td>-0.02%</td><td>27.13×</td><td>-4.95%</td><td>APPROACHING</td></tr><tr class="near"><td>KALDVIK AS</td><td>KLDVK.OL</td>
+<td>Growth/Oslo candidate</td><td>4.88</td><td>5.31</td><td>5.37</td>
+<td data-order="-1.12">-1.12%</td><td data-order="15"><strong>15/80</strong></td><td>-7.61%</td><td>1.62×</td><td>-9.62%</td><td>APPROACHING</td></tr><tr class="near"><td>Capsol Technologies ASA</td><td>CAPSL.OL</td>
+<td>Oslo Børs</td><td>4.39</td><td>4.87</td><td>4.94</td>
+<td data-order="-1.377">-1.38%</td><td data-order="15"><strong>15/80</strong></td><td>-4.11%</td><td>1.63×</td><td>-10.90%</td><td>APPROACHING</td></tr><tr class="near"><td>Voss Veksel- og Landmandsbank ASA</td><td>VVL.OL</td>
+<td>Oslo Børs</td><td>416.00</td><td>431.12</td><td>437.14</td>
+<td data-order="-1.378">-1.38%</td><td data-order="15"><strong>15/80</strong></td><td>+1.31%</td><td>0.91×</td><td>-16.80%</td><td>APPROACHING</td></tr><tr class="near"><td>Mowi ASA</td><td>MOWI.OL</td>
+<td>Oslo Børs</td><td>203.80</td><td>201.73</td><td>205.17</td>
+<td data-order="-1.677">-1.68%</td><td data-order="15"><strong>15/80</strong></td><td>-1.11%</td><td>1.21×</td><td>+4.07%</td><td>APPROACHING</td></tr><tr class=""><td>Selvaag Bolig ASA</td><td>SBO.OL</td>
+<td>Oslo Børs</td><td>29.95</td><td>32.25</td><td>33.26</td>
+<td data-order="-3.027">-3.03%</td><td data-order="15"><strong>15/80</strong></td><td>-0.74%</td><td>3.32×</td><td>-15.10%</td><td>BELOW</td></tr><tr class=""><td>HUDDLY AS</td><td>HDLY.OL</td>
+<td>Growth/Oslo candidate</td><td>22.40</td><td>24.38</td><td>25.20</td>
+<td data-order="-3.25">-3.25%</td><td data-order="15"><strong>15/80</strong></td><td>+2.92%</td><td>0.61×</td><td>-29.38%</td><td>BELOW</td></tr><tr class=""><td>Protector Forsikring ASA</td><td>PROT.OL</td>
+<td>Oslo Børs</td><td>416.00</td><td>460.98</td><td>478.83</td>
+<td data-order="-3.728">-3.73%</td><td data-order="15"><strong>15/80</strong></td><td>-1.01%</td><td>1.72×</td><td>-19.71%</td><td>BELOW</td></tr><tr class=""><td>Norsk Hydro ASA</td><td>NHY.OL</td>
+<td>Oslo Børs</td><td>78.90</td><td>88.02</td><td>91.58</td>
+<td data-order="-3.892">-3.89%</td><td data-order="15"><strong>15/80</strong></td><td>+1.20%</td><td>0.84×</td><td>-16.64%</td><td>BELOW</td></tr><tr class=""><td>Entra ASA</td><td>ENTRA.OL</td>
+<td>Oslo Børs</td><td>90.90</td><td>101.92</td><td>106.13</td>
+<td data-order="-3.971">-3.97%</td><td data-order="15"><strong>15/80</strong></td><td>-1.20%</td><td>2.82×</td><td>-17.74%</td><td>BELOW</td></tr><tr class=""><td>Vend Marketplaces ASA</td><td>VEND.OL</td>
+<td>Oslo Børs</td><td>201.20</td><td>234.81</td><td>245.81</td>
+<td data-order="-4.473">-4.47%</td><td data-order="15"><strong>15/80</strong></td><td>-2.44%</td><td>1.89×</td><td>-23.45%</td><td>BELOW</td></tr><tr class=""><td>Yara International ASA</td><td>YAR.OL</td>
+<td>Oslo Børs</td><td>413.60</td><td>438.29</td><td>459.75</td>
+<td data-order="-4.666">-4.67%</td><td data-order="15"><strong>15/80</strong></td><td>+1.48%</td><td>0.99×</td><td>-17.04%</td><td>BELOW</td></tr><tr class=""><td>Otovo ASA</td><td>OTOVO.OL</td>
+<td>Oslo Børs</td><td>9.44</td><td>10.97</td><td>11.58</td>
+<td data-order="-5.248">-5.25%</td><td data-order="15"><strong>15/80</strong></td><td>+2.03%</td><td>0.17×</td><td>-19.49%</td><td>BELOW</td></tr><tr class=""><td>Multiconsult ASA</td><td>MULTI.OL</td>
+<td>Oslo Børs</td><td>134.00</td><td>145.90</td><td>154.04</td>
+<td data-order="-5.28">-5.28%</td><td data-order="15"><strong>15/80</strong></td><td>-1.15%</td><td>4.80×</td><td>-14.89%</td><td>BELOW</td></tr><tr class=""><td>SED Energy Holdings Plc</td><td>ENH.OL</td>
+<td>Oslo Børs</td><td>6.42</td><td>7.30</td><td>7.73</td>
+<td data-order="-5.636">-5.64%</td><td data-order="15"><strong>15/80</strong></td><td>-1.00%</td><td>1.82×</td><td>-19.31%</td><td>BELOW</td></tr><tr class=""><td>Agilyx ASA</td><td>AGLX.OL</td>
+<td>Oslo Børs</td><td>15.40</td><td>17.06</td><td>18.57</td>
+<td data-order="-8.132">-8.13%</td><td data-order="15"><strong>15/80</strong></td><td>-4.17%</td><td>5.10×</td><td>-16.03%</td><td>BELOW</td></tr><tr class=""><td>Scatec ASA</td><td>SCATC.OL</td>
+<td>Oslo Børs</td><td>104.00</td><td>98.23</td><td>107.33</td>
+<td data-order="-8.479">-8.48%</td><td data-order="15"><strong>15/80</strong></td><td>-0.12%</td><td>1.25×</td><td>+1.96%</td><td>BELOW</td></tr><tr class=""><td>Northern Ocean Ltd.</td><td>NOL.OL</td>
+<td>Oslo Børs</td><td>6.60</td><td>7.35</td><td>8.24</td>
+<td data-order="-10.817">-10.82%</td><td data-order="15"><strong>15/80</strong></td><td>-1.52%</td><td>3.37×</td><td>-17.07%</td><td>BELOW</td></tr><tr class=""><td>ARCTIC FISH HOLDING AS</td><td>AFISH.OL</td>
+<td>Growth/Oslo candidate</td><td>24.40</td><td>25.64</td><td>28.77</td>
+<td data-order="-10.884">-10.88%</td><td data-order="15"><strong>15/80</strong></td><td>-1.95%</td><td>1.53×</td><td>-19.39%</td><td>BELOW</td></tr><tr class=""><td>PPI Public Property Invest AB (publ)</td><td>PUBLI.OL</td>
+<td>Oslo Børs</td><td>15.84</td><td>17.53</td><td>19.73</td>
+<td data-order="-11.141">-11.14%</td><td data-order="15"><strong>15/80</strong></td><td>-2.23%</td><td>3.35×</td><td>-24.48%</td><td>BELOW</td></tr><tr class=""><td>Borr Drilling Limited</td><td>BORR.OL</td>
+<td>Oslo Børs</td><td>44.58</td><td>40.58</td><td>46.39</td>
+<td data-order="-12.531">-12.53%</td><td data-order="15"><strong>15/80</strong></td><td>-0.06%</td><td>2.25×</td><td>-1.83%</td><td>BELOW</td></tr><tr class=""><td>Elliptic Laboratories ASA</td><td>ELABS.OL</td>
+<td>Oslo Børs</td><td>3.31</td><td>3.05</td><td>3.52</td>
+<td data-order="-13.427">-13.43%</td><td data-order="15"><strong>15/80</strong></td><td>-8.14%</td><td>0.93×</td><td>+17.93%</td><td>BELOW</td></tr><tr class=""><td>DOLPHIN DRILLING AS</td><td>DDRIL.OL</td>
+<td>Growth/Oslo candidate</td><td>1.57</td><td>2.16</td><td>2.53</td>
+<td data-order="-14.606">-14.61%</td><td data-order="15"><strong>15/80</strong></td><td>-4.03%</td><td>2.95×</td><td>-47.40%</td><td>BELOW</td></tr><tr class=""><td>Envipco Holding N.V.</td><td>ENVIP.OL</td>
+<td>Oslo Børs</td><td>42.00</td><td>39.57</td><td>46.92</td>
+<td data-order="-15.672">-15.67%</td><td data-order="15"><strong>15/80</strong></td><td>-4.74%</td><td>1.33×</td><td>+2.66%</td><td>BELOW</td></tr><tr class=""><td>Hexagon Purus ASA</td><td>HPUR.OL</td>
+<td>Oslo Børs</td><td>4.72</td><td>6.75</td><td>11.00</td>
+<td data-order="-38.683">-38.68%</td><td data-order="15"><strong>15/80</strong></td><td>-10.00%</td><td>2.55×</td><td>-65.97%</td><td>BELOW</td></tr><tr class=""><td>EXACT THERAPEUTICS</td><td>EXTX.OL</td>
+<td>Growth/Oslo candidate</td><td>0.70</td><td>0.72</td><td>1.26</td>
+<td data-order="-42.487">-42.49%</td><td data-order="15"><strong>15/80</strong></td><td>-6.44%</td><td>5.58×</td><td>-0.04%</td><td>BELOW</td></tr><tr class=""><td>THE KINGFISH COMPANY</td><td>KING.OL</td>
+<td>Growth/Oslo candidate</td><td>0.60</td><td>1.07</td><td>1.99</td>
+<td data-order="-46.12">-46.12%</td><td data-order="15"><strong>15/80</strong></td><td>-14.47%</td><td>4.19×</td><td>-32.14%</td><td>BELOW</td></tr><tr class=""><td>DESERT CONTROL AS</td><td>DSRT.OL</td>
+<td>Growth/Oslo candidate</td><td>0.23</td><td>0.35</td><td>1.11</td>
+<td data-order="-68.724">-68.72%</td><td data-order="15"><strong>15/80</strong></td><td>-14.48%</td><td>1.63×</td><td>-49.33%</td><td>BELOW</td></tr><tr class=""><td>Techstep ASA</td><td>TECH.OL</td>
+<td>Oslo Børs</td><td>2.31</td><td>2.51</td><td>8.10</td>
+<td data-order="-69.0">-69.00%</td><td data-order="15"><strong>15/80</strong></td><td>-10.69%</td><td>3.79×</td><td>-76.43%</td><td>BELOW</td></tr><tr class=""><td>Nordic Mining ASA</td><td>NOM.OL</td>
+<td>Oslo Børs</td><td>0.88</td><td>2.14</td><td>8.54</td>
+<td data-order="-74.986">-74.99%</td><td data-order="15"><strong>15/80</strong></td><td>-14.63%</td><td>2.57×</td><td>-87.13%</td><td>BELOW</td></tr><tr class=""><td>Thor Medical ASA</td><td>TRMED.OL</td>
+<td>Oslo Børs</td><td>4.46</td><td>5.28</td><td>4.78</td>
+<td data-order="10.589">+10.59%</td><td data-order="10"><strong>10/80</strong></td><td>+0.83%</td><td>0.57×</td><td>-1.34%</td><td>ABOVE</td></tr><tr class=""><td>Gjensidige Forsikring ASA</td><td>GJF.OL</td>
+<td>Oslo Børs</td><td>254.20</td><td>273.93</td><td>264.41</td>
+<td data-order="3.603">+3.60%</td><td data-order="10"><strong>10/80</strong></td><td>-0.25%</td><td>1.31×</td><td>-15.29%</td><td>ABOVE</td></tr><tr class=""><td>ADS MARITIME HOLDING PLC</td><td>ADS.OL</td>
+<td>Growth/Oslo candidate</td><td>2.42</td><td>2.53</td><td>2.47</td>
+<td data-order="2.442">+2.44%</td><td data-order="10"><strong>10/80</strong></td><td>+0.74%</td><td>0.50×</td><td>-6.93%</td><td>ABOVE</td></tr><tr class=""><td>Bakkafrost P/f</td><td>BAKKA.OL</td>
+<td>Oslo Børs</td><td>434.80</td><td>453.89</td><td>449.09</td>
+<td data-order="1.07">+1.07%</td><td data-order="10"><strong>10/80</strong></td><td>-0.86%</td><td>1.43×</td><td>-3.15%</td><td>ABOVE / CLOSE</td></tr><tr class="near"><td>Hofseth BioCare ASA</td><td>HBC.OL</td>
+<td>Oslo Børs</td><td>1.38</td><td>1.34</td><td>1.34</td>
+<td data-order="-0.264">-0.26%</td><td data-order="10"><strong>10/80</strong></td><td>-1.13%</td><td>1.43×</td><td>-10.48%</td><td>APPROACHING</td></tr><tr class="near"><td>Questerre Energy Corporation</td><td>QEC.OL</td>
+<td>Oslo Børs</td><td>1.98</td><td>1.92</td><td>1.94</td>
+<td data-order="-0.939">-0.94%</td><td data-order="10"><strong>10/80</strong></td><td>-0.98%</td><td>0.96×</td><td>+8.49%</td><td>APPROACHING</td></tr><tr class="near"><td>Bien Sparebank ASA</td><td>BIEN.OL</td>
+<td>Oslo Børs</td><td>144.00</td><td>145.26</td><td>147.83</td>
+<td data-order="-1.738">-1.74%</td><td data-order="10"><strong>10/80</strong></td><td>-0.24%</td><td>1.21×</td><td>-5.31%</td><td>APPROACHING</td></tr><tr class=""><td>Europris ASA</td><td>EPR.OL</td>
+<td>Oslo Børs</td><td>82.80</td><td>85.09</td><td>87.36</td>
+<td data-order="-2.599">-2.60%</td><td data-order="10"><strong>10/80</strong></td><td>-0.64%</td><td>1.42×</td><td>-4.70%</td><td>BELOW</td></tr><tr class=""><td>StrongPoint ASA</td><td>STRO.OL</td>
+<td>Oslo Børs</td><td>9.84</td><td>9.82</td><td>10.24</td>
+<td data-order="-4.013">-4.01%</td><td data-order="10"><strong>10/80</strong></td><td>+0.07%</td><td>0.91×</td><td>-7.88%</td><td>BELOW</td></tr><tr class=""><td>Aqualis ASA</td><td>AQUA.OL</td>
+<td>Oslo Børs</td><td>8.80</td><td>8.78</td><td>9.25</td>
+<td data-order="-5.125">-5.12%</td><td data-order="10"><strong>10/80</strong></td><td>+0.76%</td><td>0.43×</td><td>-5.53%</td><td>BELOW</td></tr><tr class=""><td>Tomra Systems ASA</td><td>TOM.OL</td>
+<td>Oslo Børs</td><td>90.30</td><td>100.22</td><td>107.68</td>
+<td data-order="-6.923">-6.92%</td><td data-order="10"><strong>10/80</strong></td><td>-3.29%</td><td>1.21×</td><td>-12.02%</td><td>BELOW</td></tr><tr class=""><td>Orkla ASA</td><td>ORK.OL</td>
+<td>Oslo Børs</td><td>93.05</td><td>96.01</td><td>106.15</td>
+<td data-order="-9.559">-9.56%</td><td data-order="10"><strong>10/80</strong></td><td>-1.02%</td><td>1.25×</td><td>-17.19%</td><td>BELOW</td></tr><tr class=""><td>Grieg Seafood ASA</td><td>GSF.OL</td>
+<td>Oslo Børs</td><td>23.08</td><td>27.38</td><td>32.31</td>
+<td data-order="-15.262">-15.26%</td><td data-order="10"><strong>10/80</strong></td><td>-3.45%</td><td>1.37×</td><td>-26.91%</td><td>BELOW</td></tr><tr class=""><td>GOLDEN ENERGY OFFSHORE SERVICES</td><td>GEOS.OL</td>
+<td>Growth/Oslo candidate</td><td>6.45</td><td>6.69</td><td>6.07</td>
+<td data-order="10.2">+10.20%</td><td data-order="8"><strong>8/80</strong></td><td>-2.08%</td><td>0.72×</td><td>-12.41%</td><td>ABOVE</td></tr><tr class="near"><td>Bouvet ASA</td><td>BOUV.OL</td>
+<td>Oslo Børs</td><td>47.55</td><td>47.36</td><td>48.00</td>
+<td data-order="-1.325">-1.32%</td><td data-order="5"><strong>5/80</strong></td><td>-2.11%</td><td>0.69×</td><td>+2.76%</td><td>APPROACHING</td></tr><tr class=""><td>Eqva ASA</td><td>EQVA.OL</td>
+<td>Oslo Børs</td><td>2.70</td><td>2.98</td><td>3.12</td>
+<td data-order="-4.485">-4.49%</td><td data-order="5"><strong>5/80</strong></td><td>-3.03%</td><td>1.07×</td><td>-20.93%</td><td>BELOW</td></tr><tr class=""><td>Hermana Holding ASA</td><td>HERMA.OL</td>
+<td>Oslo Børs</td><td>14.80</td><td>14.77</td><td>16.09</td>
+<td data-order="-8.158">-8.16%</td><td data-order="5"><strong>5/80</strong></td><td>-0.74%</td><td>1.03×</td><td>-9.82%</td><td>BELOW</td></tr><tr class=""><td>Itera ASA</td><td>ITERA.OL</td>
+<td>Oslo Børs</td><td>5.70</td><td>6.17</td><td>6.75</td>
+<td data-order="-8.53">-8.53%</td><td data-order="5"><strong>5/80</strong></td><td>-2.72%</td><td>1.09×</td><td>-15.97%</td><td>BELOW</td></tr><tr class=""><td>NEL ASA</td><td>NEL.OL</td>
+<td>Oslo Børs</td><td>1.99</td><td>2.10</td><td>2.33</td>
+<td data-order="-9.946">-9.95%</td><td data-order="5"><strong>5/80</strong></td><td>-1.23%</td><td>1.00×</td><td>-13.63%</td><td>BELOW</td></tr><tr class=""><td>Telenor ASA</td><td>TEL.OL</td>
+<td>Oslo Børs</td><td>124.50</td><td>132.64</td><td>147.49</td>
+<td data-order="-10.068">-10.07%</td><td data-order="5"><strong>5/80</strong></td><td>-0.73%</td><td>1.12×</td><td>-20.67%</td><td>BELOW</td></tr><tr class=""><td>BEVEST ASA</td><td>BINT.OL</td>
+<td>Oslo Børs</td><td>20.10</td><td>22.42</td><td>25.95</td>
+<td data-order="-13.606">-13.61%</td><td data-order="5"><strong>5/80</strong></td><td>-5.79%</td><td>1.01×</td><td>-11.38%</td><td>BELOW</td></tr><tr class=""><td>Salmon Evolution ASA</td><td>SALME.OL</td>
+<td>Oslo Børs</td><td>3.08</td><td>3.60</td><td>4.33</td>
+<td data-order="-16.803">-16.80%</td><td data-order="5"><strong>5/80</strong></td><td>-3.62%</td><td>1.03×</td><td>-28.79%</td><td>BELOW</td></tr><tr class=""><td>Axactor ASA</td><td>ACR.OL</td>
+<td>Oslo Børs</td><td>4.08</td><td>4.91</td><td>5.99</td>
+<td data-order="-17.987">-17.99%</td><td data-order="5"><strong>5/80</strong></td><td>-4.43%</td><td>1.06×</td><td>-20.66%</td><td>BELOW</td></tr><tr class=""><td>INDUCT</td><td>INDCT.OL</td>
+<td>Growth/Oslo candidate</td><td>0.55</td><td>0.70</td><td>2.32</td>
+<td data-order="-69.909">-69.91%</td><td data-order="5"><strong>5/80</strong></td><td>-13.70%</td><td>1.20×</td><td>-44.25%</td><td>BELOW</td></tr><tr class=""><td>ANDFJORD SALMON GROUP AS</td><td>ANDF.OL</td>
+<td>Growth/Oslo candidate</td><td>28.10</td><td>28.54</td><td>28.39</td>
+<td data-order="0.53">+0.53%</td><td data-order="0"><strong>0/80</strong></td><td>-0.06%</td><td>0.89×</td><td>-7.40%</td><td>ABOVE / CLOSE</td></tr><tr class="near"><td>Norconsult ASA</td><td>NORCO.OL</td>
+<td>Oslo Børs</td><td>37.25</td><td>38.40</td><td>38.41</td>
+<td data-order="-0.031">-0.03%</td><td data-order="0"><strong>0/80</strong></td><td>-1.19%</td><td>0.80×</td><td>-2.97%</td><td>APPROACHING</td></tr><tr class="near"><td>Awilco LNG ASA</td><td>ALNG.OL</td>
+<td>Euronext Expand Oslo</td><td>3.34</td><td>3.40</td><td>3.44</td>
+<td data-order="-0.946">-0.95%</td><td data-order="0"><strong>0/80</strong></td><td>-0.65%</td><td>0.90×</td><td>-16.00%</td><td>APPROACHING</td></tr><tr class="near"><td>JÆREN SPAREBANK</td><td>JAREN.OL</td>
+<td>Growth/Oslo candidate</td><td>343.00</td><td>337.25</td><td>340.82</td>
+<td data-order="-1.046">-1.05%</td><td data-order="0"><strong>0/80</strong></td><td>-0.50%</td><td>0.71×</td><td>-3.59%</td><td>APPROACHING</td></tr><tr class="near"><td>FLEKKEFJORD SPAREBANK</td><td>FFSB.OL</td>
+<td>Growth/Oslo candidate</td><td>113.52</td><td>115.67</td><td>117.21</td>
+<td data-order="-1.315">-1.31%</td><td data-order="0"><strong>0/80</strong></td><td>-0.27%</td><td>0.46×</td><td>-8.66%</td><td>APPROACHING</td></tr><tr class="near"><td>Kongsberg Automotive ASA</td><td>KOA.OL</td>
+<td>Oslo Børs</td><td>1.94</td><td>2.02</td><td>2.06</td>
+<td data-order="-1.863">-1.86%</td><td data-order="0"><strong>0/80</strong></td><td>-0.23%</td><td>0.80×</td><td>-8.79%</td><td>APPROACHING</td></tr><tr class="near"><td>ArcticZymes Technologies ASA</td><td>AZT.OL</td>
+<td>Oslo Børs</td><td>19.65</td><td>20.41</td><td>20.81</td>
+<td data-order="-1.924">-1.92%</td><td data-order="0"><strong>0/80</strong></td><td>-0.48%</td><td>0.85×</td><td>-1.61%</td><td>APPROACHING</td></tr><tr class=""><td>Lerøy Seafood Group ASA</td><td>LSG.OL</td>
+<td>Oslo Børs</td><td>41.64</td><td>42.80</td><td>43.71</td>
+<td data-order="-2.085">-2.08%</td><td data-order="0"><strong>0/80</strong></td><td>-0.53%</td><td>0.80×</td><td>-0.74%</td><td>BELOW</td></tr><tr class=""><td>S.D. Standard ETC Plc</td><td>SDSD.OL</td>
+<td>Oslo Børs</td><td>1.74</td><td>1.79</td><td>1.84</td>
+<td data-order="-2.532">-2.53%</td><td data-order="0"><strong>0/80</strong></td><td>-0.40%</td><td>0.99×</td><td>-9.97%</td><td>BELOW</td></tr><tr class=""><td>Link Mobility Group Holding ASA</td><td>LINK.OL</td>
+<td>Oslo Børs</td><td>23.96</td><td>24.71</td><td>25.58</td>
+<td data-order="-3.394">-3.39%</td><td data-order="0"><strong>0/80</strong></td><td>-2.73%</td><td>0.92×</td><td>-14.14%</td><td>BELOW</td></tr><tr class=""><td>HAVILA KYSTRUTEN AS</td><td>HKY.OL</td>
+<td>Growth/Oslo candidate</td><td>52.50</td><td>51.76</td><td>53.83</td>
+<td data-order="-3.849">-3.85%</td><td data-order="0"><strong>0/80</strong></td><td>-1.63%</td><td>0.96×</td><td>-16.32%</td><td>BELOW</td></tr><tr class=""><td>Borregaard ASA</td><td>BRG.OL</td>
+<td>Oslo Børs</td><td>151.00</td><td>153.85</td><td>161.40</td>
+<td data-order="-4.678">-4.68%</td><td data-order="0"><strong>0/80</strong></td><td>-2.18%</td><td>0.92×</td><td>-4.24%</td><td>BELOW</td></tr><tr class=""><td>Vistin Pharma ASA</td><td>VISTN.OL</td>
+<td>Oslo Børs</td><td>18.10</td><td>19.09</td><td>20.19</td>
+<td data-order="-5.465">-5.46%</td><td data-order="0"><strong>0/80</strong></td><td>-0.46%</td><td>0.52×</td><td>-17.44%</td><td>BELOW</td></tr><tr class=""><td>Gentian Diagnostics ASA</td><td>GENT.OL</td>
+<td>Oslo Børs</td><td>39.00</td><td>38.94</td><td>41.83</td>
+<td data-order="-6.899">-6.90%</td><td data-order="0"><strong>0/80</strong></td><td>-3.73%</td><td>0.75×</td><td>-2.68%</td><td>BELOW</td></tr><tr class=""><td>Ensurge Micropower ASA</td><td>ENSU.OL</td>
+<td>Oslo Børs</td><td>0.57</td><td>0.62</td><td>0.68</td>
+<td data-order="-8.453">-8.45%</td><td data-order="0"><strong>0/80</strong></td><td>-3.76%</td><td>0.72×</td><td>-24.49%</td><td>BELOW</td></tr><tr class=""><td>Arribatec Group ASA</td><td>ARR.OL</td>
+<td>Oslo Børs</td><td>5.38</td><td>5.67</td><td>6.20</td>
+<td data-order="-8.471">-8.47%</td><td data-order="0"><strong>0/80</strong></td><td>-1.67%</td><td>0.81×</td><td>-1.85%</td><td>BELOW</td></tr><tr class=""><td>NORBIT ASA</td><td>NORBT.OL</td>
+<td>Oslo Børs</td><td>158.40</td><td>165.46</td><td>182.27</td>
+<td data-order="-9.222">-9.22%</td><td data-order="0"><strong>0/80</strong></td><td>-0.60%</td><td>0.80×</td><td>-11.86%</td><td>BELOW</td></tr><tr class=""><td>Elopak ASA</td><td>ELO.OL</td>
+<td>Oslo Børs</td><td>34.95</td><td>35.90</td><td>39.94</td>
+<td data-order="-10.111">-10.11%</td><td data-order="0"><strong>0/80</strong></td><td>-2.92%</td><td>0.52×</td><td>-3.56%</td><td>BELOW</td></tr><tr class=""><td>Webstep ASA</td><td>WSTEP.OL</td>
+<td>Oslo Børs</td><td>12.90</td><td>13.73</td><td>15.29</td>
+<td data-order="-10.237">-10.24%</td><td data-order="0"><strong>0/80</strong></td><td>-2.31%</td><td>0.53×</td><td>-13.49%</td><td>BELOW</td></tr><tr class=""><td>AYFIE INTERNATIONAL AS</td><td>AIX.OL</td>
+<td>Growth/Oslo candidate</td><td>3.07</td><td>3.29</td><td>3.67</td>
+<td data-order="-10.312">-10.31%</td><td data-order="0"><strong>0/80</strong></td><td>-1.83%</td><td>0.91×</td><td>-9.07%</td><td>BELOW</td></tr><tr class=""><td>Norwegian Air Shuttle ASA</td><td>NAS.OL</td>
+<td>Oslo Børs</td><td>11.06</td><td>12.60</td><td>14.16</td>
+<td data-order="-11.009">-11.01%</td><td data-order="0"><strong>0/80</strong></td><td>-2.96%</td><td>0.80×</td><td>-20.88%</td><td>BELOW</td></tr><tr class=""><td>ARCTIC BIOSCIENCE AS</td><td>ABS.OL</td>
+<td>Growth/Oslo candidate</td><td>2.64</td><td>2.82</td><td>3.18</td>
+<td data-order="-11.244">-11.24%</td><td data-order="0"><strong>0/80</strong></td><td>-2.75%</td><td>0.17×</td><td>-23.83%</td><td>BELOW</td></tr><tr class=""><td>HSPG.OL,0P0000EEEH,0</td><td>HSPG.OL</td>
+<td>Growth/Oslo candidate</td><td>125.00</td><td>129.60</td><td>146.30</td>
+<td data-order="-11.415">-11.41%</td><td data-order="0"><strong>0/80</strong></td><td>-2.52%</td><td>0.48×</td><td>-21.47%</td><td>BELOW</td></tr><tr class=""><td>ACE DIGITAL AS</td><td>ACED.OL</td>
+<td>Growth/Oslo candidate</td><td>0.38</td><td>0.39</td><td>0.46</td>
+<td data-order="-13.871">-13.87%</td><td data-order="0"><strong>0/80</strong></td><td>-5.03%</td><td>0.47×</td><td>-3.72%</td><td>BELOW</td></tr><tr class=""><td>Photocure ASA</td><td>PHO.OL</td>
+<td>Oslo Børs</td><td>49.40</td><td>52.22</td><td>61.44</td>
+<td data-order="-15.003">-15.00%</td><td data-order="0"><strong>0/80</strong></td><td>-2.19%</td><td>0.84×</td><td>-19.84%</td><td>BELOW</td></tr><tr class=""><td>ICELANDIC SALMON</td><td>ISLAX.OL</td>
+<td>Growth/Oslo candidate</td><td>58.00</td><td>58.43</td><td>68.86</td>
+<td data-order="-15.15">-15.15%</td><td data-order="0"><strong>0/80</strong></td><td>-3.58%</td><td>0.57×</td><td>-11.31%</td><td>BELOW</td></tr><tr class=""><td>Nordic Financials ASA</td><td>NOFIN.OL</td>
+<td>Euronext Expand Oslo</td><td>1.31</td><td>1.45</td><td>1.71</td>
+<td data-order="-15.193">-15.19%</td><td data-order="0"><strong>0/80</strong></td><td>-2.74%</td><td>0.57×</td><td>-28.70%</td><td>BELOW</td></tr><tr class=""><td>BARRAMUNDI GROUP LTD.</td><td>BARRA.OL</td>
+<td>Growth/Oslo candidate</td><td>0.43</td><td>0.57</td><td>0.68</td>
+<td data-order="-16.588">-16.59%</td><td data-order="0"><strong>0/80</strong></td><td>-1.17%</td><td>0.48×</td><td>-33.64%</td><td>BELOW</td></tr><tr class=""><td>Pareto Bank ASA</td><td>PARB.OL</td>
+<td>Oslo Børs</td><td>50.30</td><td>57.42</td><td>69.08</td>
+<td data-order="-16.873">-16.87%</td><td data-order="0"><strong>0/80</strong></td><td>-3.39%</td><td>0.88×</td><td>-31.98%</td><td>BELOW</td></tr><tr class=""><td>Cavendish Hydrogen ASA</td><td>CAVEN.OL</td>
+<td>Oslo Børs</td><td>5.14</td><td>5.57</td><td>6.79</td>
+<td data-order="-18.077">-18.08%</td><td data-order="0"><strong>0/80</strong></td><td>-3.64%</td><td>0.34×</td><td>-18.19%</td><td>BELOW</td></tr><tr class=""><td>Komplett ASA</td><td>KOMPL.OL</td>
+<td>Oslo Børs</td><td>6.90</td><td>7.07</td><td>8.82</td>
+<td data-order="-19.894">-19.89%</td><td data-order="0"><strong>0/80</strong></td><td>-5.49%</td><td>0.70×</td><td>-5.31%</td><td>BELOW</td></tr><tr class=""><td>Navamedic ASA</td><td>NAVA.OL</td>
+<td>Oslo Børs</td><td>13.30</td><td>14.49</td><td>18.23</td>
+<td data-order="-20.508">-20.51%</td><td data-order="0"><strong>0/80</strong></td><td>-5.07%</td><td>0.70×</td><td>-23.21%</td><td>BELOW</td></tr><tr class=""><td>CYVIZ AS</td><td>CYVIZ.OL</td>
+<td>Growth/Oslo candidate</td><td>22.10</td><td>23.00</td><td>30.16</td>
+<td data-order="-23.741">-23.74%</td><td data-order="0"><strong>0/80</strong></td><td>-4.43%</td><td>0.19×</td><td>-16.55%</td><td>BELOW</td></tr><tr class=""><td>GIGANTE SALMON AS</td><td>GIGA.OL</td>
+<td>Growth/Oslo candidate</td><td>4.98</td><td>5.42</td><td>7.31</td>
+<td data-order="-25.849">-25.85%</td><td data-order="0"><strong>0/80</strong></td><td>-3.57%</td><td>0.80×</td><td>-31.42%</td><td>BELOW</td></tr><tr class=""><td>BLACK SEA PROPERTY</td><td>BSP.OL</td>
+<td>Growth/Oslo candidate</td><td>3.08</td><td>2.45</td><td>3.34</td>
+<td data-order="-26.682">-26.68%</td><td data-order="0"><strong>0/80</strong></td><td>-7.63%</td><td>0.80×</td><td>-2.64%</td><td>BELOW</td></tr><tr class=""><td>Aqua Bio Technology ASA</td><td>ABTEC.OL</td>
+<td>Euronext Expand Oslo</td><td>4.68</td><td>4.90</td><td>7.32</td>
+<td data-order="-33.15">-33.15%</td><td data-order="0"><strong>0/80</strong></td><td>-22.15%</td><td>0.57×</td><td>-6.99%</td><td>BELOW</td></tr><tr class=""><td>Appear ASA</td><td>APR.OL</td>
+<td>Oslo Børs</td><td>34.00</td><td>38.97</td><td>60.80</td>
+<td data-order="-35.911">-35.91%</td><td data-order="0"><strong>0/80</strong></td><td>-6.90%</td><td>0.69×</td><td>-28.03%</td><td>BELOW</td></tr><tr class=""><td>Dellia Group ASA</td><td>DELIA.OL</td>
+<td>Oslo Børs</td><td>19.14</td><td>22.01</td><td>36.29</td>
+<td data-order="-39.368">-39.37%</td><td data-order="0"><strong>0/80</strong></td><td>-5.41%</td><td>0.31×</td><td>-38.15%</td><td>BELOW</td></tr><tr class=""><td>EAM SOLAR AS</td><td>EAM.OL</td>
+<td>Growth/Oslo candidate</td><td>0.67</td><td>0.70</td><td>1.30</td>
+<td data-order="-46.543">-46.54%</td><td data-order="0"><strong>0/80</strong></td><td>-1.61%</td><td>0.61×</td><td>-30.31%</td><td>BELOW</td></tr><tr class=""><td>HydrogenPro ASA</td><td>HYPRO.OL</td>
+<td>Oslo Børs</td><td>0.47</td><td>0.53</td><td>1.45</td>
+<td data-order="-63.46">-63.46%</td><td data-order="0"><strong>0/80</strong></td><td>-11.38%</td><td>0.52×</td><td>-46.85%</td><td>BELOW</td></tr><tr class=""><td>Atlantic Sapphire ASA</td><td>ASA.OL</td>
+<td>Oslo Børs</td><td>0.76</td><td>0.81</td><td>2.73</td>
+<td data-order="-70.195">-70.19%</td><td data-order="0"><strong>0/80</strong></td><td>-19.20%</td><td>0.37×</td><td>-35.58%</td><td>BELOW</td></tr><tr class=""><td>Norse Atlantic ASA</td><td>NORSE.OL</td>
+<td>Euronext Expand Oslo</td><td>0.29</td><td>0.32</td><td>2.55</td>
+<td data-order="-87.426">-87.43%</td><td data-order="0"><strong>0/80</strong></td><td>-19.33%</td><td>0.63×</td><td>-35.66%</td><td>BELOW</td></tr><tr class=""><td>Next Biometrics Group ASA</td><td>NEXT.OL</td>
+<td>Oslo Børs</td><td>0.23</td><td>0.26</td><td>4.58</td>
+<td data-order="-94.331">-94.33%</td><td data-order="0"><strong>0/80</strong></td><td>-24.97%</td><td>0.76×</td><td>-22.00%</td><td>BELOW</td></tr></tbody></table>
+<script>
+function filterTable(){let q=document.getElementById('q').value.toLowerCase();document.querySelectorAll('#stocks tbody tr').forEach(r=>r.style.display=r.innerText.toLowerCase().includes(q)?'':'none')}
+document.querySelectorAll('th').forEach((th,i)=>th.onclick=()=>{let tb=th.closest('table').tBodies[0],rs=[...tb.rows],asc=th.dataset.asc!=='1';rs.sort((a,b)=>{let x=a.cells[i].dataset.order??a.cells[i].innerText,y=b.cells[i].dataset.order??b.cells[i].innerText;let nx=parseFloat(x),ny=parseFloat(y);return (!isNaN(nx)&&!isNaN(ny)?nx-ny:x.localeCompare(y))*(asc?1:-1)});rs.forEach(r=>tb.appendChild(r));th.dataset.asc=asc?'1':'0'})
+</script></body></html>

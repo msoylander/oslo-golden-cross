@@ -1,6 +1,6 @@
 name: Oslo Buffett Value Scan
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   schedule:
     - cron: '30 18 * * 1-5'
 permissions:

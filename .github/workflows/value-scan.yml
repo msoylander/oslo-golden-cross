@@ -1,0 +1,25 @@
+name: Oslo Buffett Value Scan
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 18 * * 1-5'
+permissions:
+  contents: write
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python value_scanner.py
+      - name: Commit value results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add value/data.json
+          git diff --cached --quiet || (git commit -m "Update Oslo value screen" && git push)

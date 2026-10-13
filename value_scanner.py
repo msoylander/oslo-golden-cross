@@ -20,6 +20,12 @@ def rank(value, low, high, invert=False):
     v=max(0,min(1,(value-low)/(high-low)))
     return round(100*(1-v if invert else v),1)
 
+def dividend_fraction(raw):
+    """Yahoo dividendYield is commonly percentage points (e.g. 7.27 for 7.27%)."""
+    value=number(raw)
+    if value is None or value < 0: return None
+    return round(value / 100, 6) if value <= 100 else None
+
 def score(info):
     sector=str(info.get("sector") or "")
     industry=str(info.get("industry") or "")
@@ -34,13 +40,18 @@ def score(info):
       "operating_margin":number(info.get("operatingMargins")),
       "debt_equity":number(info.get("debtToEquity")),
       "current_ratio":number(info.get("currentRatio")),
-      "dividend_yield":number(info.get("dividendYield")),
+      "dividend_yield":dividend_fraction(info.get("dividendYield")),
       "market_cap":number(info.get("marketCap")),
       "price":number(info.get("currentPrice") or info.get("regularMarketPrice")),
       "currency":info.get("currency"),
     }
     cap=metrics["market_cap"]; fcf=number(info.get("freeCashflow"))
     if cap and cap>0 and fcf is not None: metrics["fcf_yield"]=round(fcf/cap,4)
+    # Implausible valuation ratios often indicate stale prices or broken vendor fields.
+    for key in ("pe", "forward_pe", "pb", "ev_ebitda"):
+        v=metrics[key]
+        if v is not None and (v <= 0 or v > 500 or (key in ("pe","ev_ebitda") and v < 1)):
+            metrics[key]=None
     parts={}
     if financial:
         parts["valuation"]=[rank(metrics["pe"],5,25,True),rank(metrics["pb"],0.5,3,True)]

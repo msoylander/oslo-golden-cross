@@ -1,0 +1,43 @@
+name: Publish Oslo Value Dashboard
+on:
+  workflow_dispatch: {}
+  workflow_run:
+    workflows: ["Oslo Buffett Value Scan"]
+    types: [completed]
+  push:
+    branches: [main]
+    paths:
+      - 'value/index.html'
+      - 'value/data.json'
+      - '.github/workflows/value-pages.yml'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: oslo-value-pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Prepare website
+        run: |
+          mkdir -p _site/value
+          cp value/index.html _site/value/index.html
+          cp value/data.json _site/value/data.json
+          printf '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=value/"><title>Oslo Value Scanner</title><a href="value/">Open Oslo Value Scanner</a>' > _site/index.html
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

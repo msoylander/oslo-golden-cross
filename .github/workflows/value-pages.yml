@@ -1,8 +1,8 @@
-name: Publish Oslo Value Dashboard
+name: Publish Oslo Scanner Dashboards
 on:
   workflow_dispatch: {}
   workflow_run:
-    workflows: ["Oslo Buffett Value Scan"]
+    workflows: ["Oslo Buffett Value Scan", "Oslo Golden Cross Scan"]
     types: [completed]
   push:
     branches: [main]
@@ -15,7 +15,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: oslo-value-pages
+  group: oslo-scanner-pages
   cancel-in-progress: true
 jobs:
   deploy:
@@ -28,12 +28,19 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
-      - name: Prepare website
+          path: source
+      - uses: actions/checkout@v4
+        with:
+          ref: dashboard
+          path: golden
+      - name: Prepare combined website
         run: |
           mkdir -p _site/value
-          cp value/index.html _site/value/index.html
-          cp value/data.json _site/value/data.json
-          printf '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=value/"><title>Oslo Value Scanner</title><a href="value/">Open Oslo Value Scanner</a>' > _site/index.html
+          cp golden/index.html _site/index.html
+          cp golden/oslo_universe.csv _site/oslo_universe.csv
+          cp golden/errors.csv _site/errors.csv
+          cp source/value/index.html _site/value/index.html
+          cp source/value/data.json _site/value/data.json
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

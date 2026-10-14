@@ -1,8 +1,8 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Oslo Value Scanner</title>
-<style>body{font:15px system-ui;background:#101827;color:#e9eff8;margin:0;padding:30px}main{max-width:1200px;margin:auto}h1{margin-bottom:4px}p,small{color:#a8b5c7}input,select{background:#202d40;color:white;border:1px solid #526174;border-radius:7px;padding:9px;margin:8px 8px 8px 0}table{width:100%;border-collapse:collapse}th,td{padding:11px;text-align:right;border-bottom:1px solid #344156}th:first-child,td:first-child{text-align:left}th{cursor:pointer;color:#a9c9fa}a{color:#8dc3ff}.wrap{overflow-x:auto}.error{color:#ffb3b3}</style>
+<style>body{font:15px system-ui;background:#101827;color:#e9eff8;margin:0;padding:30px}main{max-width:1200px;margin:auto}h1{margin-bottom:4px}p,small{color:#a8b5c7}input,select,button{background:#202d40;color:white;border:1px solid #526174;border-radius:7px;padding:9px;margin:8px 8px 8px 0}table{width:100%;border-collapse:collapse}th,td{padding:11px;text-align:right;border-bottom:1px solid #344156}th:first-child,td:first-child{text-align:left}th{cursor:pointer;color:#a9c9fa}a{color:#8dc3ff}.wrap{overflow-x:auto}.error{color:#ffb3b3}</style>
 <main><h1>Oslo Value Scanner</h1><p>Buffett-inspired relative-value research · Entire Oslo universe · Scores are NOT intrinsic value estimates.</p>
 <div id="meta">Loading…</div><p id="updated" aria-live="polite"></p><input id="q" placeholder="Filter company or ticker"><select id="sector"><option value="">All sectors</option></select><select id="market"><option value="">All markets</option></select><select id="sort"><option value="score">Highest score</option><option value="pe">Lowest P/E</option><option value="dividend_yield">Highest dividend yield</option><option value="fcf_yield">Highest FCF yield</option><option value="pb">Lowest P/B</option></select>
-<div class="wrap"><table><thead><tr><th>Company</th><th>Market</th><th>Sector</th><th>Score</th><th>Coverage</th><th>P/E</th><th>P/B</th><th>EV/EBITDA</th><th>FCF yield</th><th>ROE</th><th>Dividend yield</th></tr></thead><tbody id="rows"></tbody></table></div>
+<div><label for="minDividend">Minimum dividend yield (%)</label><input id="minDividend" type="number" min="0" max="100" step="0.5" value="5" style="width:90px"><label for="maxPe">Maximum P/E</label><input id="maxPe" type="number" min="0" step="0.5" value="12" style="width:90px"><button id="clearFilters" type="button">Clear valuation filters</button></div><div id="filterCount" aria-live="polite"></div><div class="wrap"><table><thead><tr><th>Company</th><th>Market</th><th>Sector</th><th>Score</th><th>Coverage</th><th>P/E</th><th>P/B</th><th>EV/EBITDA</th><th>FCF yield</th><th>ROE</th><th>Dividend yield</th></tr></thead><tbody id="rows"></tbody></table></div>
 <p><small>Missing values shown as —. Financial companies use separate valuation weights. Yahoo Finance data may be incomplete, delayed or inaccurate; verify filings and currency before trading.</small></p></main>
 <script>
 const el=id=>document.getElementById(id);let data=[];
@@ -12,7 +12,9 @@ const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'
 function draw(){
 const q=el('q').value.toLowerCase(),sector=el('sector').value,market=el('market').value,sort=el('sort').value;
 const asc=['pe','pb'].includes(sort);
-const rows=data.filter(r=>(r.ticker+' '+r.company).toLowerCase().includes(q)&&(!sector||r.sector===sector)&&(!market||r.market===market)).sort((a,b)=>{const av=a[sort],bv=b[sort];if(av==null&&bv==null)return 0;if(av==null)return 1;if(bv==null)return -1;return asc?av-bv:bv-av;});
+const minDiv=el('minDividend').value.trim(),maxPe=el('maxPe').value.trim();
+const rows=data.filter(r=>(r.ticker+' '+r.company).toLowerCase().includes(q)&&(!sector||r.sector===sector)&&(!market||r.market===market)&&(!minDiv||(r.dividend_yield!=null&&r.dividend_yield>=Number(minDiv)/100))&&(!maxPe||(r.pe!=null&&r.pe<=Number(maxPe)))).sort((a,b)=>{const av=a[sort],bv=b[sort];if(av==null&&bv==null)return 0;if(av==null)return 1;if(bv==null)return -1;return asc?av-bv:bv-av;});
+el('filterCount').textContent=rows.length+' matching companies';
 el('rows').innerHTML=rows.map(r=>'<tr><td><b>'+safe(r.company)+'</b><br><small>'+safe(r.ticker)+'</small></td><td>'+safe(r.market)+'</td><td>'+safe(r.sector)+'</td><td>'+fmt(r.score)+'</td><td>'+pct(r.coverage)+'</td><td>'+fmt(r.pe)+'</td><td>'+fmt(r.pb)+'</td><td>'+fmt(r.ev_ebitda)+'</td><td>'+pct(r.fcf_yield)+'</td><td>'+pct(r.roe)+'</td><td>'+pct(r.dividend_yield)+'</td></tr>').join('');
 }
 fetch('data.json?ts='+Date.now()).then(r=>{if(!r.ok)throw Error('No scan results yet');return r.json()}).then(x=>{
@@ -22,5 +24,6 @@ el('updated').textContent=Number.isNaN(stamp.getTime())?'Last updated: unavailab
 for(const id of ['sector','market'])for(const v of [...new Set(data.map(r=>r[id]).filter(Boolean))].sort()){let o=document.createElement('option');o.value=v;o.textContent=v;el(id).append(o)}
 draw();
 }).catch(e=>el('meta').innerHTML='<span class="error">'+safe(e.message)+'. Run the GitHub workflow first.</span>');
-for(const id of ['q','sector','market','sort'])el(id).addEventListener('input',draw);
+for(const id of ['q','sector','market','sort','minDividend','maxPe'])el(id).addEventListener('input',draw);
+el('clearFilters').addEventListener('click',()=>{el('minDividend').value='';el('maxPe').value='';draw()});
 </script></html>

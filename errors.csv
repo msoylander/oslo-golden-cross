@@ -1,0 +1,15 @@
+ticker,company,market,source,error
+BOHUS.OL,Bohus ASA,Oslo Børs,Euronext official,only 116 valid sessions
+CAPT.OL,Capital Tankers Corp.,Oslo Børs,Euronext official,only 156 valid sessions
+CDLR.OL,Cadeler plc,Oslo Børs,Euronext official,only 15 valid sessions
+COGLD-NOK.OL,EDR Certified Origin Physical G,Growth/Oslo candidate,Yahoo candidate,only 1 valid sessions
+CTUS.OL,CETUS MARITIME HOLDINGS LIMITED,Growth/Oslo candidate,Yahoo candidate,only 7 valid sessions
+EMGS.OL,Electromagnetic Geoservices ASA,Oslo Børs,Euronext official,no Yahoo Finance price data
+GENO.OL,General Oceans ASA,Oslo Børs,Euronext official,only 170 valid sessions
+GKP.OL,GULF KEYSTONE PETROLEUM LTD,Growth/Oslo candidate,Yahoo candidate,only 196 valid sessions
+GOLDR.OL,GOLD ROAD INTERNATIONAL P.L.C,Growth/Oslo candidate,Yahoo candidate,only 107 valid sessions
+HEDER.OL,Heder Bank ASA,Oslo Børs,Euronext official,only 1 valid sessions
+JACK.OL,JACKTEL AS,Growth/Oslo candidate,Yahoo candidate,only 171 valid sessions
+KMAR.OL,Kongsberg Maritime ASA,Oslo Børs,Euronext official,only 153 valid sessions
+OUTLT.OL,Outlet Group Holding ASA,Oslo Børs,Euronext official,only 46 valid sessions
+RECSI.OL,REC Silicon ASA,Oslo Børs,Euronext official,no Yahoo Finance price data
